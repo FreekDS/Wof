@@ -1,7 +1,3 @@
-//
-// Created by Freek on 14/10/2018.
-//
-
 #include "Score.h"
 
 void Score::incrementScore() {

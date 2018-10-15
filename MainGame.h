@@ -11,6 +11,9 @@ private:
     Player* m_player1;
     Player* m_player2;
     Ball* m_ball;
+    Score* m_score1;
+    Score* m_score2;
+    sf::Font* m_font;
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;
