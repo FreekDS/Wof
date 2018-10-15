@@ -13,7 +13,7 @@ set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR SFML-2.5.0/lib/cmake/SFML)
 
 # Create executable
-add_executable(testing main.cpp GameState.h GameState.cpp MainMenu.cpp MainMenu.h MainGame.cpp MainGame.h Entity.cpp Entity.h Player.cpp Player.h Ball.cpp Ball.h Score.cpp Score.h)
+add_executable(testing main.cpp GameState.h GameState.cpp MainMenu.cpp MainMenu.h MainGame.cpp MainGame.h Entity.cpp Entity.h Player.cpp Player.h Ball.cpp Ball.h Score.cpp Score.h CollisionManager.cpp CollisionManager.h)
 
 # Search for SFML
 find_package(SFML COMPONENTS system graphics window network audio)

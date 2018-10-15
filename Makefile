@@ -149,6 +149,33 @@ Ball.cpp.s:
 	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Ball.cpp.s
 .PHONY : Ball.cpp.s
 
+CollisionManager.obj: CollisionManager.cpp.obj
+
+.PHONY : CollisionManager.obj
+
+# target to build an object file
+CollisionManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.obj
+.PHONY : CollisionManager.cpp.obj
+
+CollisionManager.i: CollisionManager.cpp.i
+
+.PHONY : CollisionManager.i
+
+# target to preprocess a source file
+CollisionManager.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.i
+.PHONY : CollisionManager.cpp.i
+
+CollisionManager.s: CollisionManager.cpp.s
+
+.PHONY : CollisionManager.s
+
+# target to generate assembly for a file
+CollisionManager.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.s
+.PHONY : CollisionManager.cpp.s
+
 Entity.obj: Entity.cpp.obj
 
 .PHONY : Entity.obj
@@ -350,6 +377,9 @@ help:
 	@echo ... Ball.obj
 	@echo ... Ball.i
 	@echo ... Ball.s
+	@echo ... CollisionManager.obj
+	@echo ... CollisionManager.i
+	@echo ... CollisionManager.s
 	@echo ... Entity.obj
 	@echo ... Entity.i
 	@echo ... Entity.s

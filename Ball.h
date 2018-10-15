@@ -19,6 +19,7 @@ private:
     Score* m_score1;
     Score* m_score2;
     int m_timesCollided;
+    sf::CircleShape* m_circleShape;
     void updateSpeeds();
 };
 

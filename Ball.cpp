@@ -1,10 +1,15 @@
 #include "Ball.h"
 #include <iostream>
 #include <cmath>
+#include "CollisionManager.h"
 
 void Ball::update(sf::RenderWindow *window) {
     bool madeCollision = false;
+
+    sf::RectangleShape rect;
+
     if(checkCollision(m_player1) || checkCollision(m_player2)){
+//    if(checkCollision(m_circleShape, getGlobalBounds())){
         madeCollision = true;
         updateSpeeds();
         m_velocity.x *= -1.2;
@@ -49,6 +54,8 @@ Ball::Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePl
     m_score2 = scorePlayer2;
     load("spelding.png");
     scale(0.1, 0.1);
+    m_circleShape = new sf::CircleShape(getGlobalBounds().height/2);
+    m_circleShape->setPosition(getPosition().x, getPosition().y);
     setOrigin(getLocalBounds().width/2, getLocalBounds().height/2);
 }
 
