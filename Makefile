@@ -122,275 +122,275 @@ testing/fast:
 	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/build
 .PHONY : testing/fast
 
-Ball.obj: Ball.cpp.obj
+src/Ball.obj: src/Ball.cpp.obj
 
-.PHONY : Ball.obj
-
-# target to build an object file
-Ball.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Ball.cpp.obj
-.PHONY : Ball.cpp.obj
-
-Ball.i: Ball.cpp.i
-
-.PHONY : Ball.i
-
-# target to preprocess a source file
-Ball.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Ball.cpp.i
-.PHONY : Ball.cpp.i
-
-Ball.s: Ball.cpp.s
-
-.PHONY : Ball.s
-
-# target to generate assembly for a file
-Ball.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Ball.cpp.s
-.PHONY : Ball.cpp.s
-
-CollisionManager.obj: CollisionManager.cpp.obj
-
-.PHONY : CollisionManager.obj
+.PHONY : src/Ball.obj
 
 # target to build an object file
-CollisionManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.obj
-.PHONY : CollisionManager.cpp.obj
+src/Ball.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Ball.cpp.obj
+.PHONY : src/Ball.cpp.obj
 
-CollisionManager.i: CollisionManager.cpp.i
+src/Ball.i: src/Ball.cpp.i
 
-.PHONY : CollisionManager.i
+.PHONY : src/Ball.i
 
 # target to preprocess a source file
-CollisionManager.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.i
-.PHONY : CollisionManager.cpp.i
+src/Ball.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Ball.cpp.i
+.PHONY : src/Ball.cpp.i
 
-CollisionManager.s: CollisionManager.cpp.s
+src/Ball.s: src/Ball.cpp.s
 
-.PHONY : CollisionManager.s
+.PHONY : src/Ball.s
 
 # target to generate assembly for a file
-CollisionManager.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.s
-.PHONY : CollisionManager.cpp.s
+src/Ball.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Ball.cpp.s
+.PHONY : src/Ball.cpp.s
 
-Countdown.obj: Countdown.cpp.obj
+src/CollisionManager.obj: src/CollisionManager.cpp.obj
 
-.PHONY : Countdown.obj
+.PHONY : src/CollisionManager.obj
 
 # target to build an object file
-Countdown.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Countdown.cpp.obj
-.PHONY : Countdown.cpp.obj
+src/CollisionManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/CollisionManager.cpp.obj
+.PHONY : src/CollisionManager.cpp.obj
 
-Countdown.i: Countdown.cpp.i
+src/CollisionManager.i: src/CollisionManager.cpp.i
 
-.PHONY : Countdown.i
+.PHONY : src/CollisionManager.i
 
 # target to preprocess a source file
-Countdown.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Countdown.cpp.i
-.PHONY : Countdown.cpp.i
+src/CollisionManager.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/CollisionManager.cpp.i
+.PHONY : src/CollisionManager.cpp.i
 
-Countdown.s: Countdown.cpp.s
+src/CollisionManager.s: src/CollisionManager.cpp.s
 
-.PHONY : Countdown.s
+.PHONY : src/CollisionManager.s
 
 # target to generate assembly for a file
-Countdown.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Countdown.cpp.s
-.PHONY : Countdown.cpp.s
+src/CollisionManager.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/CollisionManager.cpp.s
+.PHONY : src/CollisionManager.cpp.s
 
-Entity.obj: Entity.cpp.obj
+src/Countdown.obj: src/Countdown.cpp.obj
 
-.PHONY : Entity.obj
+.PHONY : src/Countdown.obj
 
 # target to build an object file
-Entity.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Entity.cpp.obj
-.PHONY : Entity.cpp.obj
+src/Countdown.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Countdown.cpp.obj
+.PHONY : src/Countdown.cpp.obj
 
-Entity.i: Entity.cpp.i
+src/Countdown.i: src/Countdown.cpp.i
 
-.PHONY : Entity.i
+.PHONY : src/Countdown.i
 
 # target to preprocess a source file
-Entity.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Entity.cpp.i
-.PHONY : Entity.cpp.i
+src/Countdown.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Countdown.cpp.i
+.PHONY : src/Countdown.cpp.i
 
-Entity.s: Entity.cpp.s
+src/Countdown.s: src/Countdown.cpp.s
 
-.PHONY : Entity.s
+.PHONY : src/Countdown.s
 
 # target to generate assembly for a file
-Entity.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Entity.cpp.s
-.PHONY : Entity.cpp.s
+src/Countdown.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Countdown.cpp.s
+.PHONY : src/Countdown.cpp.s
 
-GameState.obj: GameState.cpp.obj
+src/Entity.obj: src/Entity.cpp.obj
 
-.PHONY : GameState.obj
+.PHONY : src/Entity.obj
 
 # target to build an object file
-GameState.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/GameState.cpp.obj
-.PHONY : GameState.cpp.obj
+src/Entity.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entity.cpp.obj
+.PHONY : src/Entity.cpp.obj
 
-GameState.i: GameState.cpp.i
+src/Entity.i: src/Entity.cpp.i
 
-.PHONY : GameState.i
+.PHONY : src/Entity.i
 
 # target to preprocess a source file
-GameState.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/GameState.cpp.i
-.PHONY : GameState.cpp.i
+src/Entity.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entity.cpp.i
+.PHONY : src/Entity.cpp.i
 
-GameState.s: GameState.cpp.s
+src/Entity.s: src/Entity.cpp.s
 
-.PHONY : GameState.s
+.PHONY : src/Entity.s
 
 # target to generate assembly for a file
-GameState.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/GameState.cpp.s
-.PHONY : GameState.cpp.s
+src/Entity.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entity.cpp.s
+.PHONY : src/Entity.cpp.s
 
-MainGame.obj: MainGame.cpp.obj
+src/GameState.obj: src/GameState.cpp.obj
 
-.PHONY : MainGame.obj
+.PHONY : src/GameState.obj
 
 # target to build an object file
-MainGame.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/MainGame.cpp.obj
-.PHONY : MainGame.cpp.obj
+src/GameState.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/GameState.cpp.obj
+.PHONY : src/GameState.cpp.obj
 
-MainGame.i: MainGame.cpp.i
+src/GameState.i: src/GameState.cpp.i
 
-.PHONY : MainGame.i
+.PHONY : src/GameState.i
 
 # target to preprocess a source file
-MainGame.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/MainGame.cpp.i
-.PHONY : MainGame.cpp.i
+src/GameState.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/GameState.cpp.i
+.PHONY : src/GameState.cpp.i
 
-MainGame.s: MainGame.cpp.s
+src/GameState.s: src/GameState.cpp.s
 
-.PHONY : MainGame.s
+.PHONY : src/GameState.s
 
 # target to generate assembly for a file
-MainGame.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/MainGame.cpp.s
-.PHONY : MainGame.cpp.s
+src/GameState.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/GameState.cpp.s
+.PHONY : src/GameState.cpp.s
 
-MainMenu.obj: MainMenu.cpp.obj
+src/MainGame.obj: src/MainGame.cpp.obj
 
-.PHONY : MainMenu.obj
+.PHONY : src/MainGame.obj
 
 # target to build an object file
-MainMenu.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/MainMenu.cpp.obj
-.PHONY : MainMenu.cpp.obj
+src/MainGame.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/MainGame.cpp.obj
+.PHONY : src/MainGame.cpp.obj
 
-MainMenu.i: MainMenu.cpp.i
+src/MainGame.i: src/MainGame.cpp.i
 
-.PHONY : MainMenu.i
+.PHONY : src/MainGame.i
 
 # target to preprocess a source file
-MainMenu.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/MainMenu.cpp.i
-.PHONY : MainMenu.cpp.i
+src/MainGame.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/MainGame.cpp.i
+.PHONY : src/MainGame.cpp.i
 
-MainMenu.s: MainMenu.cpp.s
+src/MainGame.s: src/MainGame.cpp.s
 
-.PHONY : MainMenu.s
+.PHONY : src/MainGame.s
 
 # target to generate assembly for a file
-MainMenu.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/MainMenu.cpp.s
-.PHONY : MainMenu.cpp.s
+src/MainGame.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/MainGame.cpp.s
+.PHONY : src/MainGame.cpp.s
 
-Player.obj: Player.cpp.obj
+src/MainMenu.obj: src/MainMenu.cpp.obj
 
-.PHONY : Player.obj
+.PHONY : src/MainMenu.obj
 
 # target to build an object file
-Player.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Player.cpp.obj
-.PHONY : Player.cpp.obj
+src/MainMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/MainMenu.cpp.obj
+.PHONY : src/MainMenu.cpp.obj
 
-Player.i: Player.cpp.i
+src/MainMenu.i: src/MainMenu.cpp.i
 
-.PHONY : Player.i
+.PHONY : src/MainMenu.i
 
 # target to preprocess a source file
-Player.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Player.cpp.i
-.PHONY : Player.cpp.i
+src/MainMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/MainMenu.cpp.i
+.PHONY : src/MainMenu.cpp.i
 
-Player.s: Player.cpp.s
+src/MainMenu.s: src/MainMenu.cpp.s
 
-.PHONY : Player.s
+.PHONY : src/MainMenu.s
 
 # target to generate assembly for a file
-Player.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Player.cpp.s
-.PHONY : Player.cpp.s
+src/MainMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/MainMenu.cpp.s
+.PHONY : src/MainMenu.cpp.s
 
-Score.obj: Score.cpp.obj
+src/Player.obj: src/Player.cpp.obj
 
-.PHONY : Score.obj
+.PHONY : src/Player.obj
 
 # target to build an object file
-Score.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Score.cpp.obj
-.PHONY : Score.cpp.obj
+src/Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Player.cpp.obj
+.PHONY : src/Player.cpp.obj
 
-Score.i: Score.cpp.i
+src/Player.i: src/Player.cpp.i
 
-.PHONY : Score.i
+.PHONY : src/Player.i
 
 # target to preprocess a source file
-Score.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Score.cpp.i
-.PHONY : Score.cpp.i
+src/Player.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
 
-Score.s: Score.cpp.s
+src/Player.s: src/Player.cpp.s
 
-.PHONY : Score.s
+.PHONY : src/Player.s
 
 # target to generate assembly for a file
-Score.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Score.cpp.s
-.PHONY : Score.cpp.s
+src/Player.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
 
-main.obj: main.cpp.obj
+src/Score.obj: src/Score.cpp.obj
 
-.PHONY : main.obj
+.PHONY : src/Score.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/Score.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Score.cpp.obj
+.PHONY : src/Score.cpp.obj
 
-main.i: main.cpp.i
+src/Score.i: src/Score.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Score.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Score.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Score.cpp.i
+.PHONY : src/Score.cpp.i
 
-main.s: main.cpp.s
+src/Score.s: src/Score.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Score.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Score.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Score.cpp.s
+.PHONY : src/Score.cpp.s
+
+src/main.obj: src/main.cpp.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -401,36 +401,36 @@ help:
 	@echo ... testing
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Ball.obj
-	@echo ... Ball.i
-	@echo ... Ball.s
-	@echo ... CollisionManager.obj
-	@echo ... CollisionManager.i
-	@echo ... CollisionManager.s
-	@echo ... Countdown.obj
-	@echo ... Countdown.i
-	@echo ... Countdown.s
-	@echo ... Entity.obj
-	@echo ... Entity.i
-	@echo ... Entity.s
-	@echo ... GameState.obj
-	@echo ... GameState.i
-	@echo ... GameState.s
-	@echo ... MainGame.obj
-	@echo ... MainGame.i
-	@echo ... MainGame.s
-	@echo ... MainMenu.obj
-	@echo ... MainMenu.i
-	@echo ... MainMenu.s
-	@echo ... Player.obj
-	@echo ... Player.i
-	@echo ... Player.s
-	@echo ... Score.obj
-	@echo ... Score.i
-	@echo ... Score.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/Ball.obj
+	@echo ... src/Ball.i
+	@echo ... src/Ball.s
+	@echo ... src/CollisionManager.obj
+	@echo ... src/CollisionManager.i
+	@echo ... src/CollisionManager.s
+	@echo ... src/Countdown.obj
+	@echo ... src/Countdown.i
+	@echo ... src/Countdown.s
+	@echo ... src/Entity.obj
+	@echo ... src/Entity.i
+	@echo ... src/Entity.s
+	@echo ... src/GameState.obj
+	@echo ... src/GameState.i
+	@echo ... src/GameState.s
+	@echo ... src/MainGame.obj
+	@echo ... src/MainGame.i
+	@echo ... src/MainGame.s
+	@echo ... src/MainMenu.obj
+	@echo ... src/MainMenu.i
+	@echo ... src/MainMenu.s
+	@echo ... src/Player.obj
+	@echo ... src/Player.i
+	@echo ... src/Player.s
+	@echo ... src/Score.obj
+	@echo ... src/Score.i
+	@echo ... src/Score.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 

@@ -12,10 +12,24 @@ message("\t\t--------------------> LINKER FLAGS SET: " ${CMAKE_EXE_LINKER_FLAGS}
 set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR SFML-2.5.0/lib/cmake/SFML)
 
+include_directories(include)
+
 link_directories(SFML-2.5.0/extlib)
 
+set(SOURCE_FILES
+        src/main.cpp
+        src/GameState.cpp
+        src/MainMenu.cpp
+        src/MainGame.cpp
+        src/Entity.cpp
+        src/Score.cpp
+        src/Player.cpp
+        src/Ball.cpp
+        src/CollisionManager.cpp
+        src/Countdown.cpp)
+
 # Create executable
-add_executable(testing main.cpp GameState.h GameState.cpp MainMenu.cpp MainMenu.h MainGame.cpp MainGame.h Entity.cpp Entity.h Player.cpp Player.h Ball.cpp Ball.h Score.cpp Score.h CollisionManager.cpp CollisionManager.h Countdown.cpp Countdown.h)
+add_executable(testing ${SOURCE_FILES})
 
 # Search for SFML
 find_package(SFML COMPONENTS system graphics window network audio)
