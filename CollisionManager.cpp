@@ -7,12 +7,12 @@ bool collision::circleRect(Entity *circle, Entity *rect) {
 
     float radius = (circle->getGlobalBounds().width + circle->getGlobalBounds().height) /4.0f;
 
-    if(circleDistanceX > (rect->getGlobalBounds().width/2 + radius))
+    if(circleDistanceX > (rect->getGlobalBounds().width/2.0 + radius))
         return false;
-    if(circleDistanceY > (rect->getGlobalBounds().height/2 + radius))
+    if(circleDistanceY > (rect->getGlobalBounds().height/2.0 + radius))
         return false;
-    double cornerDistance_sq = pow((circleDistanceX - rect->getGlobalBounds().width/2), 2) +
-                               pow((circleDistanceY - rect->getGlobalBounds().height/2), 2);
+    double cornerDistance_sq = pow((circleDistanceX - rect->getGlobalBounds().width/2.0), 2) +
+                               pow((circleDistanceY - rect->getGlobalBounds().height/2.0), 2);
     return cornerDistance_sq <= pow(radius, 2);
 }
 //

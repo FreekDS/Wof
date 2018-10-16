@@ -5,12 +5,17 @@
 #include "Entity.h"
 #include "Player.h"
 #include "Score.h"
+#include "Countdown.h"
 
 class Ball: public Entity {
 public:
-    Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePlayer2);
+    Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePlayer2, Countdown* countdown);
     void update(sf::RenderWindow *window) override;
     void setSpeed(float newSpeed);
+    void initSpeed();
+
+    ~Ball() override;
+
 private:
     Player* m_player1;
     Player* m_player2;
@@ -19,8 +24,8 @@ private:
     Score* m_score1;
     Score* m_score2;
     int m_timesCollided;
-    sf::CircleShape* m_circleShape;
     void updateSpeeds();
+    Countdown* m_countdown;
 };
 
 

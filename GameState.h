@@ -2,6 +2,7 @@
 #define TESTING_GAMESTATE_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 class TinyState{
 public:
@@ -28,6 +29,7 @@ public:
 };
 
 extern GameState coreState;
+extern sf::SoundBuffer sBuffer;
 extern bool gameQuit;
 
 #endif //TESTING_GAMESTATE_H

@@ -176,6 +176,33 @@ CollisionManager.cpp.s:
 	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/CollisionManager.cpp.s
 .PHONY : CollisionManager.cpp.s
 
+Countdown.obj: Countdown.cpp.obj
+
+.PHONY : Countdown.obj
+
+# target to build an object file
+Countdown.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Countdown.cpp.obj
+.PHONY : Countdown.cpp.obj
+
+Countdown.i: Countdown.cpp.i
+
+.PHONY : Countdown.i
+
+# target to preprocess a source file
+Countdown.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Countdown.cpp.i
+.PHONY : Countdown.cpp.i
+
+Countdown.s: Countdown.cpp.s
+
+.PHONY : Countdown.s
+
+# target to generate assembly for a file
+Countdown.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/Countdown.cpp.s
+.PHONY : Countdown.cpp.s
+
 Entity.obj: Entity.cpp.obj
 
 .PHONY : Entity.obj
@@ -380,6 +407,9 @@ help:
 	@echo ... CollisionManager.obj
 	@echo ... CollisionManager.i
 	@echo ... CollisionManager.s
+	@echo ... Countdown.obj
+	@echo ... Countdown.i
+	@echo ... Countdown.s
 	@echo ... Entity.obj
 	@echo ... Entity.i
 	@echo ... Entity.s

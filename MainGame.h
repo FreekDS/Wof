@@ -5,6 +5,7 @@
 #include "Entity.h"
 #include "Ball.h"
 #include "Score.h"
+#include "Countdown.h"
 
 class MainGame : public TinyState  {
 private:
@@ -14,6 +15,7 @@ private:
     Score* m_score1;
     Score* m_score2;
     sf::Font* m_font;
+    Countdown* m_startCountdown;
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;

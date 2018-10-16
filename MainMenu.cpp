@@ -109,7 +109,6 @@ void MainMenu::destroy(sf::RenderWindow *window) {
     delete m_title;
     delete m_quit;
     delete m_play;
-    cout << "Destroyed MainMenu" << endl;
 }
 
 MainMenu::~MainMenu(){

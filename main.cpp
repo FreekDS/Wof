@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <ctime>
 
 #include "GameState.h"
 #include "MainMenu.h"
@@ -8,6 +9,7 @@ using namespace std;
 
 GameState coreState = GameState();
 bool gameQuit = false;
+
 
 void init(sf::RenderWindow&, sf::Sprite&, sf::Texture&);
 void initBackground(sf::RenderWindow&, sf::Sprite&, sf::Texture&);
@@ -19,6 +21,8 @@ int main() {
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), ">>>>>Wof Pong<<<<<", sf::Style::Fullscreen);
     sf::Texture bgTexture;
     sf::Sprite bgSprite;
+
+    srand(time(NULL));
 
     init(window, bgSprite, bgTexture);
 
