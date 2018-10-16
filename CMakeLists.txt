@@ -18,15 +18,19 @@ link_directories(SFML-2.5.0/extlib)
 
 set(SOURCE_FILES
         src/main.cpp
-        src/GameState.cpp
-        src/MainMenu.cpp
-        src/MainGame.cpp
-        src/Entity.cpp
-        src/Score.cpp
-        src/Player.cpp
-        src/Ball.cpp
-        src/CollisionManager.cpp
-        src/Countdown.cpp)
+
+        src/States/GameState.cpp
+        src/States/MainMenu.cpp
+        src/States/MainGame.cpp
+
+        src/UI/Score.cpp
+        src/UI/Countdown.cpp
+
+        src/Entities/Player.cpp
+        src/Entities/Entity.cpp
+        src/Entities/Ball.cpp
+
+        src/CollisionManager.cpp)
 
 # Create executable
 add_executable(testing ${SOURCE_FILES})
