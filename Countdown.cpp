@@ -10,9 +10,9 @@ void Countdown::update() {
     if(!isFinished()){
         sf::sleep(sf::seconds(1));
         m_time--;
+        updateColor();
         setString(std::to_string(m_time));
     }
-
 }
 
 Countdown::~Countdown() {
@@ -24,5 +24,13 @@ bool Countdown::isFinished() {
 
 void Countdown::setTime(unsigned int time) {
     m_time = time;
+    updateColor();
     setString(std::to_string(time));
+}
+
+void Countdown::updateColor() {
+    if(m_time > 2)
+        setFillColor(sf::Color::Green);
+    else
+        setFillColor(sf::Color::Red);
 }

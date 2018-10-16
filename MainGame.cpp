@@ -15,9 +15,9 @@ void MainGame::initialize(sf::RenderWindow *window) {
     m_player1 = new Player(0);
     m_player2 = new Player(1);
     m_player1->setPosition(m_player1->getPosition().x,
-            window->getSize().y /2.0f + m_player2->getGlobalBounds().height/2);
+            window->getSize().y /2.0f);
     m_player2->setPosition(window->getSize().x - m_player2->getGlobalBounds().width,
-            window->getSize().y /2.0f + m_player2->getGlobalBounds().height/2);
+            window->getSize().y /2.0f);
 
     m_score1 = new Score(*m_font, 16U);
     m_score2 = new Score(*m_font, 16U);

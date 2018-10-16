@@ -7,6 +7,7 @@ class Countdown : public sf::Text{
 private:
     bool m_finished;
     unsigned int m_time;
+    void updateColor();
 public:
     Countdown(sf::Font& font, unsigned int size, unsigned int time);
     void setTime(unsigned int time);
