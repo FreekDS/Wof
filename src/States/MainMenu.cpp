@@ -61,11 +61,9 @@ void MainMenu::update(sf::RenderWindow *window) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !m_upKey) {
         m_selected--;
         m_upKey = false;
-        cout << m_selected << endl;
     }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !m_downKey){
         m_selected++;
         m_downKey = false;
-        cout << m_selected << endl;
     }
 
     if(m_selected < 0)
