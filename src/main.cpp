@@ -29,8 +29,8 @@ int main() {
     init(window, bgSprite, bgTexture);
 
     coreState.setWindow(&window);
-    coreState.setState(new Settings());
-    //coreState.setState(new MainMenu());
+//    coreState.setState(new Settings());
+    coreState.setState(new MainMenu());
 
     while (window.isOpen())
     {
