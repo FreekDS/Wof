@@ -9,12 +9,17 @@ set(CMAKE_EXE_LINKER_FLAGS -pthread)
 message("\t\t--------------------> LINKER FLAGS SET: " ${CMAKE_EXE_LINKER_FLAGS})
 
 # Setting SFML variables
-set(SFML_STATIC_LIBRARIES TRUE)
-set(SFML_DIR SFML-2.5.0/lib/cmake/SFML)
+
+if(NOT UNIX)
+    set(SFML_STATIC_LIBRARIES TRUE)
+    set(SFML_DIR SFML-2.5.0/lib/cmake/SFML)
+else()
+    set(SFML_STATIC_LIBRARIES FALSE)
+    set(SFML_DIR SFML)
+endif()
+
 
 include_directories(include)
-
-link_directories(SFML-2.5.0/extlib)
 
 set(SOURCE_FILES
         src/main.cpp
@@ -42,7 +47,11 @@ if(NOT SFML_FOUND)
     message("ERROR: DINT FIND SFML")
 else()
     message("\t\t--------------------> SFML FOUND")
-    include_directories(SFML-2.5.0/include)
+        if(NOT UNIX)
+            include_directories(SFML-2.5.0/include)
+        else()
+            include_directories(SFML/include)
+        endif()
     target_link_libraries(testing sfml-system sfml-graphics sfml-audio ogg)
     message("\t\t--------------------> Successfully linked SFML")
 endif()
