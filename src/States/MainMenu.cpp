@@ -35,24 +35,34 @@ void MainMenu::initialize(sf::RenderWindow *window) {
             textRect4.top  + textRect4.height/2.0f);
     m_quit->setPosition(window->getSize().x /2.0f, m_settings->getPosition().y + m_play->getLocalBounds().height + 2);
 
+    //rave code
+    m_rave = new sf::Text("RAVE MODE", *m_font, 128U);
+    sf::FloatRect textRect5 = m_rave->getLocalBounds();
+    m_rave->setOrigin(textRect5.left + textRect5.width/2.0f,
+                       textRect5.top  + textRect5.height/2.0f);
+    m_rave->setPosition(window->getSize().x /2.0f, m_rave->getLocalBounds().height+128);
+
 
     // Doggies
     tx.loadFromFile("./res/icon.png");
     sp.setTexture(tx, true);
-    sp.setPosition(sp.getPosition().x, sp.getPosition().y + 5);
+
+    //origins and postion chanegd so the can rotate around middle
+    sp.setOrigin(sp.getTexture()->getSize().x/2,sp.getTexture()->getSize().y/2);
+    sp.setPosition(sp.getPosition().x+sp.getTexture()->getSize().x/2, sp.getPosition().y+sp.getTexture()->getSize().y/2 );
+
     sp.setColor(sf::Color(255, 255, 255, 128));
     sp2 = sp;
     sp2.scale(-1,1);
-    sp2.setPosition(window->getSize().x, sp.getPosition().y + 5);
+    sp2.setPosition(window->getSize().x-sp.getTexture()->getSize().x/2, sp.getPosition().y);
     sp3 = sp;
     sp4 = sp2;
-    sp3.setPosition(sp3.getPosition().x, window->getSize().y - tx.getSize().y);
-    sp4.setPosition(sp4.getPosition().x, window->getSize().y - tx.getSize().y);
-
+    sp3.setPosition(sp3.getPosition().x, window->getSize().y - tx.getSize().y/2);
+    sp4.setPosition(sp4.getPosition().x, window->getSize().y - tx.getSize().y/2);
     m_selected = 0;
     m_selectedColor = sf::Color::White;
 
-    m_downKey = false;
+
     m_upKey = false;
     m_enterKey = false;
 }
@@ -88,6 +98,22 @@ void MainMenu::update(sf::RenderWindow *window) {
         }
         m_enterKey = false;
     }
+
+    //rave code
+//    sp.rotate(10U);
+//    sp2.rotate(10U);
+//    sp3.rotate(10U);
+//    sp4.rotate(10U);
+    sp.rotate(1U);
+    sp2.rotate(1U);
+    sp3.rotate(1U);
+    sp4.rotate(1U);
+    sp.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
+    sp2.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
+    sp3.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
+    sp4.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
+    m_rave->setColor(sf::Color(m_rave->getColor().r+0.5,m_rave->getColor().g+.7,m_rave->getColor().b+.4));
+
     // Without these booleans, the switch/if statements would run more than one time
     m_enterKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Enter);
     m_upKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
@@ -117,6 +143,10 @@ void MainMenu::render(sf::RenderWindow *window) {
     window->draw(*m_play);
     window->draw(*m_settings);
     window->draw(*m_quit);
+
+    //rave code
+    window->draw(*m_rave);
+
     window->draw(sp);
     window->draw(sp2);
     window->draw(sp3);
@@ -129,6 +159,9 @@ void MainMenu::destroy(sf::RenderWindow *window) {
     delete m_play;
     delete m_settings;
     delete m_quit;
+
+    //rave code
+    delete m_rave;
 }
 
 MainMenu::~MainMenu(){

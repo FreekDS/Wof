@@ -29,11 +29,14 @@ int main() {
     init(window, bgSprite, bgTexture);
 
     coreState.setWindow(&window);
-    coreState.setState(new Settings());
-    //coreState.setState(new MainMenu());
+//    coreState.setState(new Settings());
+    coreState.setState(new MainMenu());
 
     while (window.isOpen())
     {
+        //rave code
+        bgSprite.setColor(sf::Color((bgSprite.getColor().r+1)%250,(bgSprite.getColor().g+3)%250,(bgSprite.getColor().b+2)%250));
+
         window.clear();
         window.draw(bgSprite);
         coreState.update();

@@ -3,8 +3,8 @@
 
 void Settings::update(sf::RenderWindow *window) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
-        gameQuit = true;
-        //coreState.setState(new MainMenu());
+//        gameQuit = true;
+        coreState.setState(new MainMenu());
     }
 }
 

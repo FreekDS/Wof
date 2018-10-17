@@ -5,8 +5,8 @@
 
 
 void Ball::update(sf::RenderWindow *window) {
-    bool madeCollision = false;
 
+    bool madeCollision = false;
     if(m_velocity.x > 10.0f)
         m_velocity.x = 7.0f;
     if(m_velocity.y > 10.0f)
@@ -14,7 +14,7 @@ void Ball::update(sf::RenderWindow *window) {
 
     if(checkCollision(m_player1) || checkCollision(m_player2)){
 //    if(collision::circleRect(this, m_player1) || collision::circleRect(this, m_player2)){
-        //m_player1->bark();
+        m_player1->bark();
         madeCollision = true;
         updateSpeeds();
         m_velocity.x *= -1.2;
@@ -43,6 +43,8 @@ void Ball::update(sf::RenderWindow *window) {
         m_countdown->setTime(3);
     }
 
+
+
     Entity::update(window);
 }
 
@@ -55,6 +57,7 @@ Ball::Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePl
     m_score2 = scorePlayer2;
     m_countdown = countdown;
     load("spelding.png");
+
     scale(0.1, 0.1);
     setOrigin(getLocalBounds().width/2, getLocalBounds().height/2);
 }
