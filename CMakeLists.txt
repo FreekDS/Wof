@@ -31,7 +31,7 @@ set(SOURCE_FILES
 
         src/UI/Score.cpp
         src/UI/Countdown.cpp
-        src/UI/DogSelector.cpp
+        src/UI/Selector.cpp
 
         src/Entities/Player.cpp
         src/Entities/Entity.cpp

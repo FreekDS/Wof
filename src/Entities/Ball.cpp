@@ -14,7 +14,7 @@ void Ball::update(sf::RenderWindow *window) {
 
     if(checkCollision(m_player1) || checkCollision(m_player2)){
 //    if(collision::circleRect(this, m_player1) || collision::circleRect(this, m_player2)){
-        //m_player1->bark();
+        m_player1->bark();
         madeCollision = true;
         updateSpeeds();
         m_velocity.x *= -1.2;
