@@ -22,6 +22,7 @@ set(SOURCE_FILES
         src/States/GameState.cpp
         src/States/MainMenu.cpp
         src/States/MainGame.cpp
+        src/States/Settings.cpp
 
         src/UI/Score.cpp
         src/UI/Countdown.cpp

@@ -22,8 +22,10 @@ public:
     GameState();
     void setWindow(sf::RenderWindow* window);
     void setState(TinyState* state);
-    void update();
-    void render();
+
+    virtual void update();
+
+    virtual void render();
 
     virtual ~GameState();
 };

@@ -311,6 +311,33 @@ src/States/MainMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainMenu.cpp.s
 .PHONY : src/States/MainMenu.cpp.s
 
+src/States/Settings.obj: src/States/Settings.cpp.obj
+
+.PHONY : src/States/Settings.obj
+
+# target to build an object file
+src/States/Settings.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/Settings.cpp.obj
+.PHONY : src/States/Settings.cpp.obj
+
+src/States/Settings.i: src/States/Settings.cpp.i
+
+.PHONY : src/States/Settings.i
+
+# target to preprocess a source file
+src/States/Settings.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/Settings.cpp.i
+.PHONY : src/States/Settings.cpp.i
+
+src/States/Settings.s: src/States/Settings.cpp.s
+
+.PHONY : src/States/Settings.s
+
+# target to generate assembly for a file
+src/States/Settings.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/Settings.cpp.s
+.PHONY : src/States/Settings.cpp.s
+
 src/UI/Countdown.obj: src/UI/Countdown.cpp.obj
 
 .PHONY : src/UI/Countdown.obj
@@ -422,6 +449,9 @@ help:
 	@echo ... src/States/MainMenu.obj
 	@echo ... src/States/MainMenu.i
 	@echo ... src/States/MainMenu.s
+	@echo ... src/States/Settings.obj
+	@echo ... src/States/Settings.i
+	@echo ... src/States/Settings.s
 	@echo ... src/UI/Countdown.obj
 	@echo ... src/UI/Countdown.i
 	@echo ... src/UI/Countdown.s
