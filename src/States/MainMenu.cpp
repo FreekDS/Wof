@@ -1,5 +1,6 @@
 #include "MainMenu.h"
 #include "MainGame.h"
+#include "Settings.h"
 #include <iostream>
 
 using namespace std;
@@ -78,7 +79,7 @@ void MainMenu::update(sf::RenderWindow *window) {
                 coreState.setState(new MainGame());
                 break;
             case 1:
-                cout << "Settings pressed" << endl;
+                coreState.setState(new Settings());
                 break;
             case 2:
                 gameQuit = true;

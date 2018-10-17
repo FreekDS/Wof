@@ -365,6 +365,33 @@ src/UI/Countdown.cpp.s:
 	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Countdown.cpp.s
 .PHONY : src/UI/Countdown.cpp.s
 
+src/UI/DogSelector.obj: src/UI/DogSelector.cpp.obj
+
+.PHONY : src/UI/DogSelector.obj
+
+# target to build an object file
+src/UI/DogSelector.cpp.obj:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/DogSelector.cpp.obj
+.PHONY : src/UI/DogSelector.cpp.obj
+
+src/UI/DogSelector.i: src/UI/DogSelector.cpp.i
+
+.PHONY : src/UI/DogSelector.i
+
+# target to preprocess a source file
+src/UI/DogSelector.cpp.i:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/DogSelector.cpp.i
+.PHONY : src/UI/DogSelector.cpp.i
+
+src/UI/DogSelector.s: src/UI/DogSelector.cpp.s
+
+.PHONY : src/UI/DogSelector.s
+
+# target to generate assembly for a file
+src/UI/DogSelector.cpp.s:
+	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/DogSelector.cpp.s
+.PHONY : src/UI/DogSelector.cpp.s
+
 src/UI/Score.obj: src/UI/Score.cpp.obj
 
 .PHONY : src/UI/Score.obj
@@ -455,6 +482,9 @@ help:
 	@echo ... src/UI/Countdown.obj
 	@echo ... src/UI/Countdown.i
 	@echo ... src/UI/Countdown.s
+	@echo ... src/UI/DogSelector.obj
+	@echo ... src/UI/DogSelector.i
+	@echo ... src/UI/DogSelector.s
 	@echo ... src/UI/Score.obj
 	@echo ... src/UI/Score.i
 	@echo ... src/UI/Score.s

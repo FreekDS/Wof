@@ -2,14 +2,18 @@
 #define TESTING_SETTINGS_H
 
 #include "GameState.h"
+#include <SFML/Graphics.hpp>
 
-class Settings : public GameState{
+class Settings : public TinyState{
 private:
-
+    sf::Font* m_font;
+    sf::Text* m_title;
 public:
-    void update() override;
-    void render() override;
-    ~Settings() override;
+    void initialize(sf::RenderWindow *window) override;
+    void update(sf::RenderWindow *window) override;
+    void render(sf::RenderWindow *window) override;
+    void destroy(sf::RenderWindow *window) override;
+    ~Settings();
 };
 
 

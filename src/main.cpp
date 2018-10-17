@@ -5,6 +5,8 @@
 #include "GameState.h"
 #include "MainMenu.h"
 
+#include "Settings.h"
+
 using namespace std;
 
 GameState coreState = GameState();
@@ -27,7 +29,8 @@ int main() {
     init(window, bgSprite, bgTexture);
 
     coreState.setWindow(&window);
-    coreState.setState(new MainMenu());
+    coreState.setState(new Settings());
+    //coreState.setState(new MainMenu());
 
     while (window.isOpen())
     {
