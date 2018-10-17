@@ -3,17 +3,76 @@
 
 void Settings::update(sf::RenderWindow *window) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
-        gameQuit = true;
-        //coreState.setState(new MainMenu());
+//        gameQuit = true;
+        //TODO: write back to cfg file
+        coreState.setState(new MainMenu());
     }
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !m_upKey) {
+        m_selected--;
+        m_upKey = false;
+    }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !m_downKey){
+        m_selected++;
+        m_downKey = false;
+    }
+
+    if(m_selected < 0)
+        m_selected = 2;
+    if(m_selected > 2)
+        m_selected = 0;
+
+    switch (m_selected){
+        case 0:
+            m_selPlayer1->enable();
+            m_selPlayer2->disable();
+            break;
+        case 1:
+            m_selPlayer1->disable();
+            m_selPlayer2->enable();
+            m_selProjectile->disable();
+            break;
+        case 2:
+            m_selPlayer1->disable();
+            m_selPlayer2->disable();
+            m_selProjectile->enable();
+            break;
+        default:
+            break;
+    }
+
+    // Without these booleans, the switch/if statements would run more than one time
+    m_upKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
+    m_downKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
+
     m_selPlayer1->update(window);
     m_selPlayer2->update(window);
+    m_selProjectile->update(window);
 }
 
 void Settings::render(sf::RenderWindow *window) {
     window->draw(*m_title);
+
+    m_selPlayer1->setFillColor(sf::Color::Black);
+    m_selPlayer2->setFillColor(sf::Color::Black);
+    m_selProjectile->setFillColor(sf::Color::Black);
+
+    switch (m_selected){
+        default:
+            break;
+        case 0:
+            m_selPlayer1->setFillColor(sf::Color::White);
+            break;
+        case 1:
+            m_selPlayer2->setFillColor(sf::Color::White);
+            break;
+        case 2:
+            m_selProjectile->setFillColor(sf::Color::White);
+            break;
+    }
+
     m_selPlayer1->render(window);
     m_selPlayer2->render(window);
+    m_selProjectile->render(window);
 }
 
 Settings::~Settings() {
@@ -44,9 +103,15 @@ void Settings::initialize(sf::RenderWindow *window) {
 
     m_selPlayer2 = new Selector("Player two's dog", *m_font, 64U, "player", 2);
     m_selPlayer2->setPosition(m_selPlayer2->getPosition().x,
-                              window->getSize().y / 2.0f + m_selPlayer2->getGlobalBounds().height/2.0f);
+                              m_selPlayer1->getPosition().y + 3 * m_selPlayer2->getGlobalBounds().height);
 
     m_selProjectile = new Selector("Projectile", *m_font, 64U, "projectile", 1);
+    m_selProjectile->setPosition(m_selProjectile->getPosition().x,
+                                 m_selPlayer2->getPosition().y + 3.5f * m_selProjectile->getGlobalBounds().height);
+
+    m_selected = 0;
+    m_upKey = false;
+    m_downKey = false;
 
 
 }

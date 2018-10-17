@@ -13,6 +13,10 @@ private:
     Selector* m_selPlayer1;
     Selector* m_selPlayer2;
     Selector* m_selProjectile;
+
+    int m_selected;
+
+    bool m_upKey, m_downKey;
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;
