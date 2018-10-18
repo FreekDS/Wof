@@ -15,6 +15,7 @@ void Ball::update(sf::RenderWindow *window) {
     if(checkCollision(m_player1) || checkCollision(m_player2)){
 //    if(collision::circleRect(this, m_player1) || collision::circleRect(this, m_player2)){
         m_player1->bark();
+        std::cout << "blafke" << std::endl;
         madeCollision = true;
         updateSpeeds();
         m_velocity.x *= -1.2;
@@ -68,7 +69,8 @@ void Ball::setSpeed(float newSpeed) {
 
 void Ball::updateSpeeds() {
     m_timesCollided++;
-    m_rotSpeed *= 1.2f;
+    if(m_rotSpeed < 5)
+        m_rotSpeed *= 1.2f;
 }
 
 void Ball::initSpeed() {
@@ -83,9 +85,9 @@ void Ball::initSpeed() {
         m_rotSpeed = -1.0f;
     }
     if(ran2 == 0) {
-        m_velocity.y = 1.0f;
+        m_velocity.y = 0.0f;
     } else {
-        m_velocity.y = -1.0f;
+        m_velocity.y = -0.0f;
     }
 }
 

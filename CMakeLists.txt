@@ -20,6 +20,7 @@ endif()
 
 
 include_directories(include)
+include_directories(include/mini)
 link_directories(SFML-2.5.0/bin)
 
 set(SOURCE_FILES

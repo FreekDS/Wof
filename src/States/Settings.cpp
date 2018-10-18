@@ -1,10 +1,14 @@
+
+#include <Settings.h>
+
 #include "Settings.h"
 #include "MainMenu.h"
+#include "ini.h"
 
 void Settings::update(sf::RenderWindow *window) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
 //        gameQuit = true;
-        //TODO: write back to cfg file
+        writeConfig();
         coreState.setState(new MainMenu());
     }
 
@@ -87,6 +91,8 @@ void Settings::destroy(sf::RenderWindow *window) {
 }
 
 void Settings::initialize(sf::RenderWindow *window) {
+    int maxPlayer, maxProjectile;
+    readConfig(maxPlayer, maxProjectile);
     m_font = new sf::Font();
     m_font->loadFromFile("./res/font.ttf");
 
@@ -96,16 +102,16 @@ void Settings::initialize(sf::RenderWindow *window) {
                        textRect.top  + textRect.height/2.0f);
     m_title->setPosition(window->getSize().x /2.0f, m_title->getLocalBounds().height);
 
-    m_selPlayer1 = new Selector("Player one's dog", *m_font, 64U, "player", 2);
+    m_selPlayer1 = new Selector("Player one's dog", *m_font, 64U, "player", maxPlayer);
     m_selPlayer1->setPosition(m_selPlayer1->getPosition().x,
             window->getSize().y / 2.0f - 5*m_selPlayer1->getGlobalBounds().height);
     m_selPlayer1->enable();
 
-    m_selPlayer2 = new Selector("Player two's dog", *m_font, 64U, "player", 2);
+    m_selPlayer2 = new Selector("Player two's dog", *m_font, 64U, "player", static_cast<unsigned int>(maxPlayer));
     m_selPlayer2->setPosition(m_selPlayer2->getPosition().x,
                               m_selPlayer1->getPosition().y + 3 * m_selPlayer2->getGlobalBounds().height);
 
-    m_selProjectile = new Selector("Projectile", *m_font, 64U, "projectile", 1);
+    m_selProjectile = new Selector("Projectile", *m_font, 64U, "projectile", static_cast<unsigned int>(maxProjectile));
     m_selProjectile->setPosition(m_selProjectile->getPosition().x,
                                  m_selPlayer2->getPosition().y + 3.5f * m_selProjectile->getGlobalBounds().height);
 
@@ -114,4 +120,23 @@ void Settings::initialize(sf::RenderWindow *window) {
     m_downKey = false;
 
 
+}
+
+void Settings::writeConfig() {
+    //File instance
+    mINI::INIFile file("./cfg/cfg.ini");
+    mINI::INIStructure ini;
+    file.read(ini);
+    ini["Settings"]["player1"] = std::to_string(m_selPlayer1->getSelectedInt());
+    ini["Settings"]["player2"] = std::to_string(m_selPlayer2->getSelectedInt());
+    ini["Settings"]["projectile"] = std::to_string(m_selProjectile->getSelectedInt());
+    file.write(ini);
+}
+
+void Settings::readConfig(int &maxPlayer, int& maxProjectile) {
+    mINI::INIFile file("./cf/cfg.ini");
+    mINI::INIStructure ini;
+    file.read(ini);
+    maxPlayer = std::stoi(ini.get("Settings").get("num_of_player_sprites"));
+    maxProjectile = std::stoi(ini.get("Settings").get("num_of_projectile_sprites"));
 }
