@@ -2,12 +2,21 @@
 #define TESTING_SETTINGS_H
 
 #include "GameState.h"
+#include "Selector.h"
 #include <SFML/Graphics.hpp>
 
 class Settings : public TinyState{
 private:
     sf::Font* m_font;
     sf::Text* m_title;
+
+    Selector* m_selPlayer1;
+    Selector* m_selPlayer2;
+    Selector* m_selProjectile;
+
+    int m_selected;
+
+    bool m_upKey, m_downKey;
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;

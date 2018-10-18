@@ -366,33 +366,6 @@ src/UI/Countdown.cpp.s:
 	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/Countdown.cpp.s
 .PHONY : src/UI/Countdown.cpp.s
 
-src/UI/DogSelector.o: src/UI/DogSelector.cpp.o
-
-.PHONY : src/UI/DogSelector.o
-
-# target to build an object file
-src/UI/DogSelector.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/DogSelector.cpp.o
-.PHONY : src/UI/DogSelector.cpp.o
-
-src/UI/DogSelector.i: src/UI/DogSelector.cpp.i
-
-.PHONY : src/UI/DogSelector.i
-
-# target to preprocess a source file
-src/UI/DogSelector.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/DogSelector.cpp.i
-.PHONY : src/UI/DogSelector.cpp.i
-
-src/UI/DogSelector.s: src/UI/DogSelector.cpp.s
-
-.PHONY : src/UI/DogSelector.s
-
-# target to generate assembly for a file
-src/UI/DogSelector.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/DogSelector.cpp.s
-.PHONY : src/UI/DogSelector.cpp.s
-
 src/UI/Score.o: src/UI/Score.cpp.o
 
 .PHONY : src/UI/Score.o
@@ -419,6 +392,33 @@ src/UI/Score.s: src/UI/Score.cpp.s
 src/UI/Score.cpp.s:
 	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/Score.cpp.s
 .PHONY : src/UI/Score.cpp.s
+
+src/UI/Selector.o: src/UI/Selector.cpp.o
+
+.PHONY : src/UI/Selector.o
+
+# target to build an object file
+src/UI/Selector.cpp.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/Selector.cpp.o
+.PHONY : src/UI/Selector.cpp.o
+
+src/UI/Selector.i: src/UI/Selector.cpp.i
+
+.PHONY : src/UI/Selector.i
+
+# target to preprocess a source file
+src/UI/Selector.cpp.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/Selector.cpp.i
+.PHONY : src/UI/Selector.cpp.i
+
+src/UI/Selector.s: src/UI/Selector.cpp.s
+
+.PHONY : src/UI/Selector.s
+
+# target to generate assembly for a file
+src/UI/Selector.cpp.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/UI/Selector.cpp.s
+.PHONY : src/UI/Selector.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -483,12 +483,12 @@ help:
 	@echo "... src/UI/Countdown.o"
 	@echo "... src/UI/Countdown.i"
 	@echo "... src/UI/Countdown.s"
-	@echo "... src/UI/DogSelector.o"
-	@echo "... src/UI/DogSelector.i"
-	@echo "... src/UI/DogSelector.s"
 	@echo "... src/UI/Score.o"
 	@echo "... src/UI/Score.i"
 	@echo "... src/UI/Score.s"
+	@echo "... src/UI/Selector.o"
+	@echo "... src/UI/Selector.i"
+	@echo "... src/UI/Selector.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

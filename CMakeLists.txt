@@ -20,6 +20,7 @@ endif()
 
 
 include_directories(include)
+link_directories(SFML-2.5.0/bin)
 
 set(SOURCE_FILES
         src/main.cpp
@@ -31,7 +32,7 @@ set(SOURCE_FILES
 
         src/UI/Score.cpp
         src/UI/Countdown.cpp
-        src/UI/DogSelector.cpp
+        src/UI/Selector.cpp
 
         src/Entities/Player.cpp
         src/Entities/Entity.cpp
@@ -53,6 +54,6 @@ else()
         else()
             include_directories(SFML/include)
         endif()
-    target_link_libraries(testing sfml-system sfml-graphics sfml-audio ogg)
+    target_link_libraries(testing sfml-system sfml-graphics sfml-audio)
     message("\t\t--------------------> Successfully linked SFML")
 endif()

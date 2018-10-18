@@ -6,9 +6,14 @@
 
 class Player : public Entity{
 private:
-    int m_playerNum;
+
     sf::SoundBuffer* m_bark;
     sf::Sound* m_sound;
+    int m_playerNum;
+#ifdef UNIX
+    sf::SoundBuffer* m_bark;
+    sf::Sound* m_sound;
+#endif
 public:
     Player(int m_playerNum);
     void update(sf::RenderWindow* window) override;
