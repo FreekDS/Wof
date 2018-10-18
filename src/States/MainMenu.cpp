@@ -102,6 +102,7 @@ void MainMenu::update(sf::RenderWindow *window) {
 //    sp2.rotate(10U);
 //    sp3.rotate(10U);
 //    sp4.rotate(10U);
+if(::gameMode==1) {
     sp.rotate(1U);
     sp2.rotate(1U);
     sp3.rotate(1U);
@@ -117,6 +118,7 @@ void MainMenu::update(sf::RenderWindow *window) {
     m_rave->setColor(sf::Color(static_cast<sf::Uint8>(m_rave->getColor().r + 2),
                                static_cast<sf::Uint8>(m_rave->getColor().g + 1),
                                static_cast<sf::Uint8>(m_rave->getColor().b + 3)));
+}
 
     // Without these booleans, the switch/if statements would run more than one time
     m_enterKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Enter);
@@ -149,7 +151,9 @@ void MainMenu::render(sf::RenderWindow *window) {
     window->draw(*m_quit);
 
     //rave code
-    window->draw(*m_rave);
+    if(gameMode==2) {
+        window->draw(*m_rave);
+    }
 
     window->draw(sp);
     window->draw(sp2);

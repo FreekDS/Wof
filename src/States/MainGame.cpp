@@ -33,9 +33,13 @@ void MainGame::initialize(sf::RenderWindow *window) {
 void MainGame::update(sf::RenderWindow *window) {
 
     //rave code
-    m_ball->setColor(sf::Color(m_ball->getColor().r+1,m_ball->getColor().g+3,m_ball->getColor().b+2));
-    m_player1->setColor(sf::Color(m_player1->getColor().r+3,m_player1->getColor().g,m_player1->getColor().b+1));
-    m_player2->setColor(sf::Color(m_player2->getColor().r+1,m_player2->getColor().g+3,m_player2->getColor().b));
+    if(gameMode==1) {
+        m_ball->setColor(sf::Color(m_ball->getColor().r + 1, m_ball->getColor().g + 3, m_ball->getColor().b + 2));
+        m_player1->setColor(
+                sf::Color(m_player1->getColor().r + 3, m_player1->getColor().g, m_player1->getColor().b + 1));
+        m_player2->setColor(
+                sf::Color(m_player2->getColor().r + 1, m_player2->getColor().g + 3, m_player2->getColor().b));
+    }
 
     if(m_startCountdown->isFinished()) {
         m_ball->update(window);

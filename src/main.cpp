@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <ctime>
+#include <random>
 
 #include "GameState.h"
 #include "MainMenu.h"
@@ -11,6 +12,7 @@ using namespace std;
 
 GameState coreState = GameState();
 bool gameQuit = false;
+int gameMode =Settings::readMode();
 
 
 void init(sf::RenderWindow&, sf::Sprite&, sf::Texture&);
@@ -24,7 +26,7 @@ int main() {
     sf::Texture bgTexture;
     sf::Sprite bgSprite;
 
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(nullptr)));
 
     init(window, bgSprite, bgTexture);
 
@@ -34,13 +36,16 @@ int main() {
 
     while (window.isOpen())
     {
-        //rave code
-        bgSprite.setColor(sf::Color(static_cast<sf::Uint8>((bgSprite.getColor().r + 1) % 250),
-                                    static_cast<sf::Uint8>((bgSprite.getColor().g + 3) % 250),
-                                    static_cast<sf::Uint8>((bgSprite.getColor().b + 2) % 250)));
-
         window.clear();
         window.draw(bgSprite);
+        if(gameMode==1){
+            srand(static_cast<unsigned int>(time(nullptr)));
+            bgSprite.setColor(sf::Color(static_cast<sf::Uint8>(bgSprite.getColor().r + rand() % 3),
+                                        static_cast<sf::Uint8>(bgSprite.getColor().r + rand() % 3),
+                                        static_cast<sf::Uint8>(bgSprite.getColor().b + rand() % 3)));
+        }else{
+            bgSprite.setColor(sf::Color(255,255,255));
+        }
         coreState.update();
         coreState.render();
         window.display();

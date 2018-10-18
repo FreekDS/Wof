@@ -23,7 +23,7 @@ void Selector::update(sf::RenderWindow* window) {
     }
     setString(m_text + ": " + std::to_string(m_selected + 1));
 
-    if (m_selected != m_previousSelected && m_selected <= m_max) {
+    if (m_selected != m_previousSelected && m_selected <= m_max&&!m_imageName.empty()) {
         m_texture->loadFromFile("./res/" + m_imageName + std::to_string(m_selected) + ".png");
         m_previousSelected = m_selected;
     }
@@ -47,7 +47,9 @@ Selector::Selector(std::string string, const sf::Font &font, unsigned int charac
     m_rightKey = false;
     m_text = string;
     m_texture = new sf::Texture();
-    m_texture->loadFromFile("./res/" + imageName + "0.png");
+    if(!imageName.empty()) {
+        m_texture->loadFromFile("./res/" + imageName + "0.png");
+    }
     m_texture->setSmooth(true);
     m_preview = new sf::Sprite();
     m_preview->setTexture(*m_texture);
@@ -71,4 +73,8 @@ void Selector::enable() {
 
 void Selector::disable() {
     m_enable = false;
+}
+
+void Selector::setSelected(int m_selected) {
+    Selector::m_selected = m_selected;
 }
