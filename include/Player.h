@@ -6,6 +6,9 @@
 
 class Player : public Entity{
 private:
+
+    sf::SoundBuffer* m_bark;
+    sf::Sound* m_sound;
     int m_playerNum;
 #ifdef UNIX
     sf::SoundBuffer* m_bark;

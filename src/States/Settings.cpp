@@ -1,14 +1,17 @@
 
 #include <Settings.h>
+#include <iostream>
 
 #include "Settings.h"
 #include "MainMenu.h"
 #include "ini.h"
 
+
 void Settings::update(sf::RenderWindow *window) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)){
 //        gameQuit = true;
-        writeConfig();
+
+         writeConfig();
         coreState.setState(new MainMenu());
     }
 
@@ -21,25 +24,34 @@ void Settings::update(sf::RenderWindow *window) {
     }
 
     if(m_selected < 0)
-        m_selected = 2;
-    if(m_selected > 2)
+        m_selected = 3;
+    if(m_selected > 3)
         m_selected = 0;
 
     switch (m_selected){
         case 0:
             m_selPlayer1->enable();
             m_selPlayer2->disable();
+            m_selProjectile->disable();
+            m_selMode->disable();
             break;
         case 1:
             m_selPlayer1->disable();
             m_selPlayer2->enable();
             m_selProjectile->disable();
+            m_selMode->disable();
             break;
         case 2:
             m_selPlayer1->disable();
             m_selPlayer2->disable();
             m_selProjectile->enable();
+            m_selMode->disable();
             break;
+        case  3:
+            m_selPlayer1->disable();
+            m_selPlayer2->disable();
+            m_selProjectile->disable();
+            m_selMode->enable();
         default:
             break;
     }
@@ -48,9 +60,14 @@ void Settings::update(sf::RenderWindow *window) {
     m_upKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
     m_downKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
 
+
+
     m_selPlayer1->update(window);
     m_selPlayer2->update(window);
     m_selProjectile->update(window);
+    m_selMode->update(window);
+
+    ::gameMode=m_selMode->getSelectedInt();
 }
 
 void Settings::render(sf::RenderWindow *window) {
@@ -59,6 +76,7 @@ void Settings::render(sf::RenderWindow *window) {
     m_selPlayer1->setFillColor(sf::Color::Black);
     m_selPlayer2->setFillColor(sf::Color::Black);
     m_selProjectile->setFillColor(sf::Color::Black);
+    m_selMode->setFillColor(sf::Color::Black);
 
     switch (m_selected){
         default:
@@ -72,11 +90,15 @@ void Settings::render(sf::RenderWindow *window) {
         case 2:
             m_selProjectile->setFillColor(sf::Color::White);
             break;
+        case 3:
+            m_selMode->setFillColor(sf::Color::White);
+            break;
     }
 
     m_selPlayer1->render(window);
     m_selPlayer2->render(window);
     m_selProjectile->render(window);
+    m_selMode->render(window);
 }
 
 Settings::~Settings() {
@@ -85,14 +107,16 @@ Settings::~Settings() {
     delete m_selPlayer1;
     delete m_selPlayer2;
     delete m_selProjectile;
+    delete m_selMode;
 }
 
 void Settings::destroy(sf::RenderWindow *window) {
 }
 
 void Settings::initialize(sf::RenderWindow *window) {
-    int maxPlayer, maxProjectile;
-    readConfig(maxPlayer, maxProjectile);
+    int maxPlayer, maxProjectile,maxMode;
+
+    readConfig(maxPlayer, maxProjectile,maxMode);
     m_font = new sf::Font();
     m_font->loadFromFile("./res/font.ttf");
 
@@ -115,11 +139,14 @@ void Settings::initialize(sf::RenderWindow *window) {
     m_selProjectile->setPosition(m_selProjectile->getPosition().x,
                                  m_selPlayer2->getPosition().y + 3.5f * m_selProjectile->getGlobalBounds().height);
 
+    m_selMode = new Selector("Mode", *m_font, 64U, "", static_cast<unsigned int>(maxMode));
+    m_selMode->setPosition(m_selProjectile->getPosition().x,
+                                 m_selProjectile->getPosition().y + 3.5f * m_selMode->getGlobalBounds().height);
+
     m_selected = 0;
     m_upKey = false;
     m_downKey = false;
-
-
+    readCurrentSettings();
 }
 
 void Settings::writeConfig() {
@@ -130,13 +157,33 @@ void Settings::writeConfig() {
     ini["Settings"]["player1"] = std::to_string(m_selPlayer1->getSelectedInt());
     ini["Settings"]["player2"] = std::to_string(m_selPlayer2->getSelectedInt());
     ini["Settings"]["projectile"] = std::to_string(m_selProjectile->getSelectedInt());
+    ini["settings"]["currentMode"]= std::to_string(m_selMode->getSelectedInt());
     file.write(ini);
 }
 
-void Settings::readConfig(int &maxPlayer, int& maxProjectile) {
-    mINI::INIFile file("./cf/cfg.ini");
+void Settings::readConfig(int &maxPlayer, int& maxProjectile,int& maxMode) {
+    mINI::INIFile file("./cfg/cfg.ini");
     mINI::INIStructure ini;
     file.read(ini);
     maxPlayer = std::stoi(ini.get("Settings").get("num_of_player_sprites"));
     maxProjectile = std::stoi(ini.get("Settings").get("num_of_projectile_sprites"));
+    maxMode=std::stoi(ini.get("Settings").get("num_of_modes"));
 }
+
+void Settings::readCurrentSettings(){
+    mINI::INIFile file("./cfg/cfg.ini");
+    mINI::INIStructure ini;
+    file.read(ini);
+    m_selMode->setSelected(std::stoi(ini.get("Settings").get("currentMode")));
+    m_selProjectile->setSelected(std::stoi(ini.get("Settings").get("projectile")));
+    m_selPlayer1->setSelected(std::stoi(ini.get("Settings").get("player1")));
+    m_selPlayer2->setSelected(std::stoi(ini.get("Settings").get("player2")));
+}
+
+int Settings::readMode(){
+    mINI::INIFile file("./cfg/cfg.ini");
+    mINI::INIStructure ini;
+    file.read(ini);
+    gameMode =std::stoi(ini.get("Settings").get("currentMode"));
+}
+

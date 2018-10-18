@@ -33,5 +33,6 @@ public:
 extern GameState coreState;
 extern sf::SoundBuffer sBuffer;
 extern bool gameQuit;
+extern int gameMode;
 
 #endif //TESTING_GAMESTATE_H

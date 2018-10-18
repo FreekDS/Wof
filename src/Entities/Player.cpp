@@ -25,25 +25,33 @@ Player::Player(int m_playerNum) : m_playerNum(m_playerNum) {
             this->load("player2.png");
             break;
     }
+
+    m_bark = new sf::SoundBuffer();
+    m_bark->loadFromFile("./res/sounds/dog0.wav");
+    m_sound = new sf::Sound();
+    m_sound->setBuffer(*m_bark);
+
 #ifdef UNIX
     m_bark = new sf::SoundBuffer();
     m_bark->loadFromFile("./res/dog0.wav");
     m_sound = new sf::Sound();
     m_sound->setBuffer(*m_bark);
 #endif
+
     scale(0.5f, 0.5f);
 }
 
 void Player::bark() {
+
+    m_sound->play();
+}
+
+Player::~Player() {
+    delete m_bark;
+    delete m_sound;
 #ifdef UNIX
     m_sound->play();
 #endif
 }
 
 
-Player::~Player() {
-#ifdef UNIX
-    delete m_sound;
-    delete m_bark;
-#endif
-}

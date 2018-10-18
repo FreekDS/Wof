@@ -13,17 +13,20 @@ private:
     Selector* m_selPlayer1;
     Selector* m_selPlayer2;
     Selector* m_selProjectile;
+    Selector* m_selMode;
 
     int m_selected;
 
     bool m_upKey, m_downKey;
-    void readConfig(int& maxPlayer, int& maxProjectile);
+    void readConfig(int& maxPlayer, int& maxProjectile, int& maxMode);
+    void readCurrentSettings();
     void writeConfig();
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;
     void render(sf::RenderWindow *window) override;
     void destroy(sf::RenderWindow *window) override;
+    static int readMode();
     ~Settings();
 };
 

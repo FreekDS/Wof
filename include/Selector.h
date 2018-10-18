@@ -27,6 +27,8 @@ public:
     int getSelectedInt();
     virtual ~Selector();
     Selector(std::string string, const sf::Font &font, unsigned int characterSize, std::string imageName, unsigned int max);
+
+    void setSelected(int m_selected);
 };
 
 

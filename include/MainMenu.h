@@ -12,6 +12,9 @@ private:
     sf::Text* m_settings = nullptr;
     sf::Text* m_quit = nullptr;
 
+    //rave code
+    sf::Text* m_rave = nullptr;
+
     //UI elements (dogs)
     sf::Texture tx;
     sf::Sprite sp, sp2, sp3, sp4;
