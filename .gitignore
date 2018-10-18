@@ -37,6 +37,7 @@ CMakeCache.txt
 CMakeFiles/
 cmake-build-debug/
 cmake_install.cmake
+Makefile
 
 SFML-2.5.0/
 SFML/
