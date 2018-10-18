@@ -17,6 +17,8 @@ private:
     int m_selected;
 
     bool m_upKey, m_downKey;
+    void readConfig(int& maxPlayer, int& maxProjectile);
+    void writeConfig();
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;
