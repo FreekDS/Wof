@@ -108,11 +108,17 @@ void MainMenu::update(sf::RenderWindow *window) {
     sp2.rotate(1U);
     sp3.rotate(1U);
     sp4.rotate(1U);
-    sp.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
-    sp2.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
-    sp3.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
-    sp4.setColor(sf::Color(sp.getColor().r+1,sp.getColor().g+2,sp.getColor().b+3));
-    m_rave->setColor(sf::Color(m_rave->getColor().r+0.5,m_rave->getColor().g+.7,m_rave->getColor().b+.4));
+    sp.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                          static_cast<sf::Uint8>(sp.getColor().b + 3)));
+    sp2.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                           static_cast<sf::Uint8>(sp.getColor().b + 3)));
+    sp3.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                           static_cast<sf::Uint8>(sp.getColor().b + 3)));
+    sp4.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                           static_cast<sf::Uint8>(sp.getColor().b + 3)));
+    m_rave->setColor(sf::Color(static_cast<sf::Uint8>(m_rave->getColor().r + 2),
+                               static_cast<sf::Uint8>(m_rave->getColor().g + 1),
+                               static_cast<sf::Uint8>(m_rave->getColor().b + 3)));
 
     // Without these booleans, the switch/if statements would run more than one time
     m_enterKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Enter);

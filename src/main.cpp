@@ -35,7 +35,9 @@ int main() {
     while (window.isOpen())
     {
         //rave code
-        bgSprite.setColor(sf::Color((bgSprite.getColor().r+1)%250,(bgSprite.getColor().g+3)%250,(bgSprite.getColor().b+2)%250));
+        bgSprite.setColor(sf::Color(static_cast<sf::Uint8>((bgSprite.getColor().r + 1) % 250),
+                                    static_cast<sf::Uint8>((bgSprite.getColor().g + 3) % 250),
+                                    static_cast<sf::Uint8>((bgSprite.getColor().b + 2) % 250)));
 
         window.clear();
         window.draw(bgSprite);
