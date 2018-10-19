@@ -12,7 +12,8 @@ using namespace std;
 
 GameState coreState = GameState();
 bool gameQuit = false;
-int gameMode =Settings::readMode();
+int gameMode;
+int readMode();
 
 
 void init(sf::RenderWindow&, sf::Sprite&, sf::Texture&);
@@ -25,6 +26,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode::getDesktopMode(), ">>>>>Wof Pong<<<<<", sf::Style::Fullscreen);
     sf::Texture bgTexture;
     sf::Sprite bgSprite;
+    gameMode = readMode();
 
     srand(static_cast<unsigned int>(time(nullptr)));
 
@@ -44,7 +46,7 @@ int main() {
                                         static_cast<sf::Uint8>(bgSprite.getColor().r + rand() % 3),
                                         static_cast<sf::Uint8>(bgSprite.getColor().b + rand() % 3)));
         }else{
-            bgSprite.setColor(sf::Color(255,255,255));
+            //bgSprite.setColor(sf::Color(255,255,255));
         }
         coreState.update();
         coreState.render();

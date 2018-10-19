@@ -26,9 +26,10 @@ public:
     void update(sf::RenderWindow *window) override;
     void render(sf::RenderWindow *window) override;
     void destroy(sf::RenderWindow *window) override;
-    static int readMode();
     ~Settings();
 };
+
+extern int readMode();
 
 
 #endif //TESTING_SETTINGS_H

@@ -74,7 +74,6 @@ void Ball::updateSpeeds() {
 }
 
 void Ball::initSpeed() {
-    std::cout << "Initspeed" << std::endl;
     int ran = rand() % 2;
     int ran2 = rand() % 2;
     if(ran == 0){
@@ -85,9 +84,9 @@ void Ball::initSpeed() {
         m_rotSpeed = -1.0f;
     }
     if(ran2 == 0) {
-        m_velocity.y = 0.0f;
+        m_velocity.y = 1.0f;
     } else {
-        m_velocity.y = -0.0f;
+        m_velocity.y = -1.0f;
     }
 }
 

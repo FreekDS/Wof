@@ -157,7 +157,7 @@ void Settings::writeConfig() {
     ini["Settings"]["player1"] = std::to_string(m_selPlayer1->getSelectedInt());
     ini["Settings"]["player2"] = std::to_string(m_selPlayer2->getSelectedInt());
     ini["Settings"]["projectile"] = std::to_string(m_selProjectile->getSelectedInt());
-    ini["settings"]["currentMode"]= std::to_string(m_selMode->getSelectedInt());
+    ini["Settings"]["current_mode"]= std::to_string(m_selMode->getSelectedInt());
     file.write(ini);
 }
 
@@ -174,16 +174,18 @@ void Settings::readCurrentSettings(){
     mINI::INIFile file("./cfg/cfg.ini");
     mINI::INIStructure ini;
     file.read(ini);
-    m_selMode->setSelected(std::stoi(ini.get("Settings").get("currentMode")));
+    m_selMode->setSelected(std::stoi(ini.get("Settings").get("current_mode")));
     m_selProjectile->setSelected(std::stoi(ini.get("Settings").get("projectile")));
     m_selPlayer1->setSelected(std::stoi(ini.get("Settings").get("player1")));
     m_selPlayer2->setSelected(std::stoi(ini.get("Settings").get("player2")));
 }
 
-int Settings::readMode(){
+int readMode(){
     mINI::INIFile file("./cfg/cfg.ini");
     mINI::INIStructure ini;
     file.read(ini);
-    gameMode =std::stoi(ini.get("Settings").get("currentMode"));
+    gameMode = std::stoi(ini.get("Settings").get("current_mode"));
+    std::cout << "mode read" << std::to_string(gameMode) << std::endl;
+    return 0;
 }
 

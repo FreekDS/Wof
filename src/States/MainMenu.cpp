@@ -48,17 +48,17 @@ void MainMenu::initialize(sf::RenderWindow *window) {
     sp.setTexture(tx, true);
 
     //origins and postion chanegd so the can rotate around middle
-    sp.setOrigin(sp.getTexture()->getSize().x/2,sp.getTexture()->getSize().y/2);
-    sp.setPosition(sp.getPosition().x+sp.getTexture()->getSize().x/2, sp.getPosition().y+sp.getTexture()->getSize().y/2 );
+    sp.setOrigin(sp.getTexture()->getSize().x/2.0f,sp.getTexture()->getSize().y/2.0f);
+    sp.setPosition(sp.getPosition().x+sp.getTexture()->getSize().x/2.0f, sp.getPosition().y+sp.getTexture()->getSize().y/2.0f);
 
     sp.setColor(sf::Color(255, 255, 255, 128));
     sp2 = sp;
     sp2.scale(-1,1);
-    sp2.setPosition(window->getSize().x-sp.getTexture()->getSize().x/2, sp.getPosition().y);
+    sp2.setPosition(window->getSize().x-sp.getTexture()->getSize().x/2.0f, sp.getPosition().y);
     sp3 = sp;
     sp4 = sp2;
-    sp3.setPosition(sp3.getPosition().x, window->getSize().y - tx.getSize().y/2);
-    sp4.setPosition(sp4.getPosition().x, window->getSize().y - tx.getSize().y/2);
+    sp3.setPosition(sp3.getPosition().x, window->getSize().y - tx.getSize().y/2.0f);
+    sp4.setPosition(sp4.getPosition().x, window->getSize().y - tx.getSize().y/2.0f);
     m_selected = 0;
     m_selectedColor = sf::Color::White;
 
@@ -98,27 +98,23 @@ void MainMenu::update(sf::RenderWindow *window) {
     }
 
     //rave code
-//    sp.rotate(10U);
-//    sp2.rotate(10U);
-//    sp3.rotate(10U);
-//    sp4.rotate(10U);
-if(::gameMode==1) {
-    sp.rotate(1U);
-    sp2.rotate(1U);
-    sp3.rotate(1U);
-    sp4.rotate(1U);
-    sp.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                          static_cast<sf::Uint8>(sp.getColor().b + 3)));
-    sp2.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                           static_cast<sf::Uint8>(sp.getColor().b + 3)));
-    sp3.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                           static_cast<sf::Uint8>(sp.getColor().b + 3)));
-    sp4.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                           static_cast<sf::Uint8>(sp.getColor().b + 3)));
-    m_rave->setColor(sf::Color(static_cast<sf::Uint8>(m_rave->getColor().r + 2),
-                               static_cast<sf::Uint8>(m_rave->getColor().g + 1),
-                               static_cast<sf::Uint8>(m_rave->getColor().b + 3)));
-}
+    if(::gameMode==1) {
+        sp.rotate(1U);
+        sp2.rotate(1U);
+        sp3.rotate(1U);
+        sp4.rotate(1U);
+        sp.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                              static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        sp2.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                               static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        sp3.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                               static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        sp4.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                               static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        m_rave->setColor(sf::Color(static_cast<sf::Uint8>(m_rave->getColor().r + 2),
+                                   static_cast<sf::Uint8>(m_rave->getColor().g + 1),
+                                   static_cast<sf::Uint8>(m_rave->getColor().b + 3)));
+    }
 
     // Without these booleans, the switch/if statements would run more than one time
     m_enterKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Enter);
@@ -151,7 +147,7 @@ void MainMenu::render(sf::RenderWindow *window) {
     window->draw(*m_quit);
 
     //rave code
-    if(gameMode==2) {
+    if(gameMode==1) {
         window->draw(*m_rave);
     }
 
