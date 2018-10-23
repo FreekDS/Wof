@@ -38,6 +38,7 @@ int main() {
 
     while (window.isOpen())
     {
+        cout << to_string(gameMode) << endl;
         window.clear();
         window.draw(bgSprite);
         if(gameMode==1){
@@ -46,7 +47,7 @@ int main() {
                                         static_cast<sf::Uint8>(bgSprite.getColor().r + rand() % 3),
                                         static_cast<sf::Uint8>(bgSprite.getColor().b + rand() % 3)));
         }else{
-            //bgSprite.setColor(sf::Color(255,255,255));
+            bgSprite.setColor(sf::Color(255,255,255));
         }
         coreState.update();
         coreState.render();

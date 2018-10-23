@@ -184,8 +184,8 @@ int readMode(){
     mINI::INIFile file("./cfg/cfg.ini");
     mINI::INIStructure ini;
     file.read(ini);
-    gameMode = std::stoi(ini.get("Settings").get("current_mode"));
+    int blafke = std::stoi(ini.get("Settings").get("current_mode"));
     std::cout << "mode read" << std::to_string(gameMode) << std::endl;
-    return 0;
+    return blafke;
 }
 
