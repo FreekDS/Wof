@@ -38,7 +38,6 @@ int main() {
 
     while (window.isOpen())
     {
-        cout << to_string(gameMode) << endl;
         window.clear();
         window.draw(bgSprite);
         if(gameMode==1){
