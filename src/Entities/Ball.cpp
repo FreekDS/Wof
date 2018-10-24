@@ -18,6 +18,7 @@ void Ball::update(sf::RenderWindow *window) {
         madeCollision = true;
         updateSpeeds();
         m_velocity.x *= -1.2;
+        m_velocity.y *= 1.1524;
     }
     if(getPosition().y < 0 || getPosition().y > window->getSize().y) {
         madeCollision = true;
@@ -68,7 +69,7 @@ void Ball::setSpeed(float newSpeed) {
 
 void Ball::updateSpeeds() {
     m_timesCollided++;
-    if(m_rotSpeed < 5)
+    if(m_rotSpeed < 10)
         m_rotSpeed *= 1.2f;
 }
 

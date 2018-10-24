@@ -4,9 +4,9 @@
 void Player::update(sf::RenderWindow* window) {
     double x = getPosition().x;
     if(x < window->getSize().x / 2.0f)
-        m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::S) - sf::Keyboard::isKeyPressed(sf::Keyboard::Z);
+        m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::S) - sf::Keyboard::isKeyPressed(sf::Keyboard::Z) * 1.2f;
     else
-        m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Down) - sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
+        m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Down) - sf::Keyboard::isKeyPressed(sf::Keyboard::Up) * 1.2f;
 
     Entity::update(window);
     if(getPosition().y < 0)
