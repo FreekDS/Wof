@@ -9,7 +9,7 @@
 
 class Ball: public Entity {
 public:
-    Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePlayer2, Countdown* countdown);
+    Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePlayer2, Countdown* countdown, int spriteNum = 0);
     void update(sf::RenderWindow *window) override;
     void setSpeed(float newSpeed);
     void initSpeed();

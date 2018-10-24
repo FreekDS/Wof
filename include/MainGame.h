@@ -16,6 +16,8 @@ private:
     Score* m_score2;
     sf::Font* m_font;
     Countdown* m_startCountdown;
+    int m_player1Num, m_player2Num, m_projectileNum;
+    void readSettings();
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;

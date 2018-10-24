@@ -13,9 +13,8 @@ void Ball::update(sf::RenderWindow *window) {
         m_velocity.y = 7.0f;
 
     if(checkCollision(m_player1) || checkCollision(m_player2)){
-//    if(collision::circleRect(this, m_player1) || collision::circleRect(this, m_player2)){
+//    if(Collision::PixelPerfectTest(*m_player1, *this) || Collision::PixelPerfectTest(*m_player2, *this)){
         m_player1->bark();
-        std::cout << "blafke" << std::endl;
         madeCollision = true;
         updateSpeeds();
         m_velocity.x *= -1.2;
@@ -49,7 +48,7 @@ void Ball::update(sf::RenderWindow *window) {
     Entity::update(window);
 }
 
-Ball::Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePlayer2, Countdown* countdown) {
+Ball::Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePlayer2, Countdown* countdown, int spriteNum) {
     m_player1 = player1;
     m_player2 = player2;
     initSpeed();
@@ -57,9 +56,9 @@ Ball::Ball(Player* player1, Player* player2, Score* scorePlayer1, Score* scorePl
     m_score1 = scorePlayer1;
     m_score2 = scorePlayer2;
     m_countdown = countdown;
-    load("spelding.png");
+    this->load("projectile" + std::to_string(spriteNum) + ".png");
 
-    scale(0.1, 0.1);
+    scale(0.3, 0.3);
     setOrigin(getLocalBounds().width/2, getLocalBounds().height/2);
 }
 

@@ -1,31 +1,35 @@
 #include "MainGame.h"
 #include "MainMenu.h"
 #include "Player.h"
+#include "ini.h"
 #include <iostream>
-
+#include <MainGame.h>
 
 void MainGame::initialize(sf::RenderWindow *window) {
     m_font = new sf::Font();
     m_font->loadFromFile("./res/font.ttf");
+
+    readSettings();
 
     m_startCountdown = new Countdown(*m_font, 200U, 5);
     m_startCountdown->setOrigin(m_startCountdown->getGlobalBounds().width/2, m_startCountdown->getGlobalBounds().height/2);
     m_startCountdown->setPosition(static_cast<float>(window->getSize().x / 2.0),
                                   static_cast<float>(window->getSize().y / 2.0 - m_startCountdown->getGlobalBounds().height/2));
 
-    m_player1 = new Player(0);
-    m_player2 = new Player(1);
+    m_player1 = new Player(m_player1Num);
+    m_player2 = new Player(m_player2Num);
     m_player1->setPosition(m_player1->getPosition().x,
             window->getSize().y /2.0f);
-    m_player2->setPosition(window->getSize().x - m_player2->getGlobalBounds().width,
+    m_player2->setPosition(window->getSize().x,
             window->getSize().y /2.0f);
+    m_player2->scale(-1, 1);
 
     m_score1 = new Score(*m_font, 16U);
     m_score2 = new Score(*m_font, 16U);
 
     m_score2->setPosition(window->getSize().x - m_score2->getGlobalBounds().width - 1/100.0f * window->getSize().x, 0);
 
-    m_ball = new Ball(m_player1, m_player2, m_score1, m_score2, m_startCountdown);
+    m_ball = new Ball(m_player1, m_player2, m_score1, m_score2, m_startCountdown, m_projectileNum);
     m_ball->setPosition(window->getSize().x /2.0f, window->getSize().y/2.0f);
 
 }
@@ -83,4 +87,14 @@ MainGame::~MainGame() {
     delete m_score2;
     delete m_font;
     delete m_startCountdown;
+}
+
+void MainGame::readSettings()
+{
+    mINI::INIFile file("./cfg/cfg.ini");
+    mINI::INIStructure ini;
+    file.read(ini);
+    m_player1Num = std::stoi(ini.get("Settings").get("player1"));
+    m_player2Num = std::stoi(ini.get("Settings").get("player2"));
+    m_projectileNum = std::stoi(ini.get("Settings").get("projectile"));
 }

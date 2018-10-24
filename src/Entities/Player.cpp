@@ -1,14 +1,13 @@
+#include <iostream>
 #include "Player.h"
 
 void Player::update(sf::RenderWindow* window) {
-    switch (m_playerNum){
-        case 0:
-            m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::S) - sf::Keyboard::isKeyPressed(sf::Keyboard::Z);
-            break;
-        default:
-            m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Down) - sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
-            break;
-    }
+    double x = getPosition().x;
+    if(x < window->getSize().x / 2.0f)
+        m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::S) - sf::Keyboard::isKeyPressed(sf::Keyboard::Z);
+    else
+        m_velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Down) - sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
+
     Entity::update(window);
     if(getPosition().y < 0)
         move(0, 1.0f);
@@ -17,14 +16,9 @@ void Player::update(sf::RenderWindow* window) {
 }
 
 Player::Player(int m_playerNum) : m_playerNum(m_playerNum) {
-    switch (m_playerNum){
-        case 0:
-            this->load("player.png");
-            break;
-        default:
-            this->load("player2.png");
-            break;
-    }
+    std::cout << "player num: " << std::to_string(m_playerNum) << std::endl;
+    std::string filename = "player" + std::to_string(m_playerNum) + ".png";
+    this->load(filename);
 
 #ifdef UNIX
     m_bark = new sf::SoundBuffer();
