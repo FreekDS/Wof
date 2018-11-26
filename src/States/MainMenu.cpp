@@ -6,6 +6,7 @@
 using namespace std;
 
 void MainMenu::initialize(sf::RenderWindow *window) {
+
     // Font
     m_font = new sf::Font();
     m_font->loadFromFile("./res/font.ttf");
@@ -68,25 +69,6 @@ void MainMenu::initialize(sf::RenderWindow *window) {
 }
 
 void MainMenu::update(sf::RenderWindow *window) {
-    //rave code
-    if(::gameMode==1) {
-        sp.rotate(1U);
-        sp2.rotate(1U);
-        sp3.rotate(1U);
-        sp4.rotate(1U);
-        sp.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                static_cast<sf::Uint8>(sp.getColor().b + 3)));
-        sp2.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                static_cast<sf::Uint8>(sp.getColor().b + 3)));
-        sp3.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                static_cast<sf::Uint8>(sp.getColor().b + 3)));
-        sp4.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
-                static_cast<sf::Uint8>(sp.getColor().b + 3)));
-        m_rave->setFillColor(sf::Color(static_cast<sf::Uint8>(m_rave->getFillColor().r + 2),
-                static_cast<sf::Uint8>(m_rave->getFillColor().g + 1),
-                static_cast<sf::Uint8>(m_rave->getFillColor().b + 3)));
-    }
-
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !m_upKey) {
         m_selected--;
         m_upKey = false;
@@ -116,8 +98,28 @@ void MainMenu::update(sf::RenderWindow *window) {
         m_enterKey = false;
     }
 
+    //rave code
+    if(::gameMode==1) {
+        sp.rotate(1U);
+        sp2.rotate(1U);
+        sp3.rotate(1U);
+        sp4.rotate(1U);
+        sp.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                              static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        sp2.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                               static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        sp3.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                               static_cast<sf::Uint8>(sp.getColor().b + 3)));
+        sp4.setColor(sf::Color(static_cast<sf::Uint8>(sp.getColor().r + 1), static_cast<sf::Uint8>(sp.getColor().g + 2),
+                               static_cast<sf::Uint8>(sp.getColor().b + 3)));
+//        m_rave->setColor(sf::Color(static_cast<sf::Uint8>(m_rave->getColor().r + 2),
+//                                   static_cast<sf::Uint8>(m_rave->getColor().g + 1),
+//                                   static_cast<sf::Uint8>(m_rave->getColor().b + 3)));
+
+    }
+
     // Without these booleans, the switch/if statements would run more than one time
-    m_enterKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Enter);
+//    m_enterKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Enter);
     m_upKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
     m_downKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
 }
@@ -141,8 +143,6 @@ void MainMenu::render(sf::RenderWindow *window) {
             break;
     }
 
-
-
     window->draw(*m_title);
     window->draw(*m_play);
     window->draw(*m_settings);
@@ -160,6 +160,7 @@ void MainMenu::render(sf::RenderWindow *window) {
 }
 
 void MainMenu::destroy(sf::RenderWindow *window) {
+    delete m_font;
     delete m_title;
     delete m_play;
     delete m_settings;
@@ -167,7 +168,6 @@ void MainMenu::destroy(sf::RenderWindow *window) {
 
     //rave code
     delete m_rave;
-    delete m_font;
 }
 
 MainMenu::~MainMenu(){

@@ -30,6 +30,7 @@ void Selector::update(sf::RenderWindow* window) {
 
     m_rightKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && m_enable;
     m_leftKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && m_enable;
+
 }
 
 int Selector::getSelectedInt() {

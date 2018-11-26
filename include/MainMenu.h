@@ -25,6 +25,8 @@ private:
 
     //Keys
     bool m_upKey, m_downKey, m_enterKey;
+
+
 public:
     void initialize(sf::RenderWindow *window) override;
     void update(sf::RenderWindow *window) override;

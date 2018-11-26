@@ -6,6 +6,7 @@
 #include <MainGame.h>
 
 void MainGame::initialize(sf::RenderWindow *window) {
+
     m_font = new sf::Font();
     m_font->loadFromFile("./res/font.ttf");
 

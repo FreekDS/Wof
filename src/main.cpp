@@ -12,8 +12,7 @@ using namespace std;
 
 GameState coreState = GameState();
 bool gameQuit = false;
-int gameMode;
-int readMode();
+int gameMode=readMode();
 
 
 void init(sf::RenderWindow&, sf::Sprite&, sf::Texture&);
@@ -22,8 +21,17 @@ void initIcon(sf::RenderWindow&);
 
 
 int main() {
+    sf::SoundBuffer buffer;
+    //music
+    sf::SoundBuffer raveSound;
+    sf::Sound sound;
+    sound.setVolume(10);
+    raveSound.loadFromFile("res/sounds/Rave.wav");
+    sound.setBuffer(raveSound);
+    sound.setLoop(true);
+
     sf::Clock clk;
-    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), ">>>>>Wof Pong<<<<<", sf::Style::None);
+    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), ">>>>>Wof Pong<<<<<", sf::Style::Fullscreen);
     sf::Texture bgTexture;
     sf::Sprite bgSprite;
     gameMode = readMode();
@@ -45,8 +53,17 @@ int main() {
             bgSprite.setColor(sf::Color(static_cast<sf::Uint8>(bgSprite.getColor().r + rand() % 3),
                                         static_cast<sf::Uint8>(bgSprite.getColor().r + rand() % 3),
                                         static_cast<sf::Uint8>(bgSprite.getColor().b + rand() % 3)));
-        }else{
-            bgSprite.setColor(sf::Color(255,255,255));
+            if (sound.getStatus() != sf::Sound::Playing) {
+                sound.play();
+            }
+        }else if(bgSprite.getColor().r!=255&&bgSprite.getColor().b!=255&&bgSprite.getColor().g!=255) {
+            bgSprite.setColor(sf::Color(255, 255, 255));
+        }
+
+        if(gameMode==0) {
+            if (sound.getStatus() == sf::Sound::Playing) {
+                sound.stop();
+            }
         }
         coreState.update();
         coreState.render();

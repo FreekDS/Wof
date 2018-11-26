@@ -15,6 +15,8 @@ private:
     Selector* m_selProjectile;
     Selector* m_selMode;
 
+
+
     int m_selected;
 
     bool m_upKey, m_downKey;

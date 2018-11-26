@@ -9,7 +9,9 @@ private:
     int m_playerNum;
 //#ifdef UNIX
     sf::SoundBuffer* m_bark;
-    sf::Sound* m_sound;
+    sf::SoundBuffer* m_airhorne;
+    sf::Sound* m_barkSound;
+    sf::Sound* m_airhorneSound;
 //#endif
 public:
     Player(int m_playerNum);

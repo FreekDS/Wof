@@ -56,11 +56,10 @@ void Settings::update(sf::RenderWindow *window) {
             break;
     }
 
+
     // Without these booleans, the switch/if statements would run more than one time
     m_upKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
     m_downKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
-
-
 
     m_selPlayer1->update(window);
     m_selPlayer2->update(window);
@@ -114,6 +113,8 @@ void Settings::destroy(sf::RenderWindow *window) {
 }
 
 void Settings::initialize(sf::RenderWindow *window) {
+    //rave music
+
     int maxPlayer, maxProjectile,maxMode;
 
     readConfig(maxPlayer, maxProjectile,maxMode);
@@ -157,7 +158,7 @@ void Settings::writeConfig() {
     ini["Settings"]["player1"] = std::to_string(m_selPlayer1->getSelectedInt());
     ini["Settings"]["player2"] = std::to_string(m_selPlayer2->getSelectedInt());
     ini["Settings"]["projectile"] = std::to_string(m_selProjectile->getSelectedInt());
-    ini["Settings"]["current_mode"]= std::to_string(m_selMode->getSelectedInt());
+    ini["settings"]["current_Mode"]= std::to_string(m_selMode->getSelectedInt());
     file.write(ini);
 }
 
@@ -174,7 +175,7 @@ void Settings::readCurrentSettings(){
     mINI::INIFile file("./cfg/cfg.ini");
     mINI::INIStructure ini;
     file.read(ini);
-    m_selMode->setSelected(std::stoi(ini.get("Settings").get("current_mode")));
+    m_selMode->setSelected(std::stoi(ini.get("Settings").get("current_Mode")));
     m_selProjectile->setSelected(std::stoi(ini.get("Settings").get("projectile")));
     m_selPlayer1->setSelected(std::stoi(ini.get("Settings").get("player1")));
     m_selPlayer2->setSelected(std::stoi(ini.get("Settings").get("player2")));
@@ -184,8 +185,7 @@ int readMode(){
     mINI::INIFile file("./cfg/cfg.ini");
     mINI::INIStructure ini;
     file.read(ini);
-    int blafke = std::stoi(ini.get("Settings").get("current_mode"));
-    std::cout << "mode read" << std::to_string(gameMode) << std::endl;
-    return blafke;
+    return std::stoi(ini.get("Settings").get("current_mode"));
+
 }
 
