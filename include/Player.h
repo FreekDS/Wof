@@ -7,10 +7,10 @@
 class Player : public Entity{
 private:
     int m_playerNum;
-#ifdef UNIX
+//#ifdef UNIX
     sf::SoundBuffer* m_bark;
     sf::Sound* m_sound;
-#endif
+//#endif
 public:
     Player(int m_playerNum);
     void update(sf::RenderWindow* window) override;

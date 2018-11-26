@@ -20,26 +20,26 @@ Player::Player(int m_playerNum) : m_playerNum(m_playerNum) {
     std::string filename = "player" + std::to_string(m_playerNum) + ".png";
     this->load(filename);
 
-#ifdef UNIX
+//#ifdef UNIX
     m_bark = new sf::SoundBuffer();
-    m_bark->loadFromFile("./res/dog0.wav");
+    m_bark->loadFromFile("./res/sounds/dog0.wav");
     m_sound = new sf::Sound();
     m_sound->setBuffer(*m_bark);
-#endif
+//#endif
 
     scale(0.5f, 0.5f);
 }
 
 void Player::bark() {
-#ifdef UNIX
+//#ifdef UNIX
     m_sound->play();
-#endif
+//#endif
 }
 
 Player::~Player() {
-#ifdef UNIX
-    m_sound->play();
-#endif
+    m_sound->stop();
+    delete m_sound;
+    delete m_bark;
 }
 
 

@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Freek\CLionProjects\testing
+CMAKE_SOURCE_DIR = C:\Users\gebruiker\Documents\ClionProjects\Wof
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Freek\CLionProjects\testing
+CMAKE_BINARY_DIR = C:\Users\gebruiker\Documents\ClionProjects\Wof
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Freek\CLionProjects\testing\CMakeFiles C:\Users\Freek\CLionProjects\testing\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\gebruiker\Documents\ClionProjects\Wof\CMakeFiles C:\Users\gebruiker\Documents\ClionProjects\Wof\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Freek\CLionProjects\testing\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\gebruiker\Documents\ClionProjects\Wof\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testing
+# Target rules for targets named wof
 
 # Build rule for target.
-testing: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 testing
-.PHONY : testing
+wof: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 wof
+.PHONY : wof
 
 # fast build rule for target.
-testing/fast:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/build
-.PHONY : testing/fast
+wof/fast:
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/build
+.PHONY : wof/fast
 
 src/CollisionManager.obj: src/CollisionManager.cpp.obj
 
@@ -128,7 +128,7 @@ src/CollisionManager.obj: src/CollisionManager.cpp.obj
 
 # target to build an object file
 src/CollisionManager.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/CollisionManager.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/CollisionManager.cpp.obj
 .PHONY : src/CollisionManager.cpp.obj
 
 src/CollisionManager.i: src/CollisionManager.cpp.i
@@ -137,7 +137,7 @@ src/CollisionManager.i: src/CollisionManager.cpp.i
 
 # target to preprocess a source file
 src/CollisionManager.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/CollisionManager.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/CollisionManager.cpp.i
 .PHONY : src/CollisionManager.cpp.i
 
 src/CollisionManager.s: src/CollisionManager.cpp.s
@@ -146,7 +146,7 @@ src/CollisionManager.s: src/CollisionManager.cpp.s
 
 # target to generate assembly for a file
 src/CollisionManager.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/CollisionManager.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/CollisionManager.cpp.s
 .PHONY : src/CollisionManager.cpp.s
 
 src/Entities/Ball.obj: src/Entities/Ball.cpp.obj
@@ -155,7 +155,7 @@ src/Entities/Ball.obj: src/Entities/Ball.cpp.obj
 
 # target to build an object file
 src/Entities/Ball.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Ball.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Ball.cpp.obj
 .PHONY : src/Entities/Ball.cpp.obj
 
 src/Entities/Ball.i: src/Entities/Ball.cpp.i
@@ -164,7 +164,7 @@ src/Entities/Ball.i: src/Entities/Ball.cpp.i
 
 # target to preprocess a source file
 src/Entities/Ball.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Ball.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Ball.cpp.i
 .PHONY : src/Entities/Ball.cpp.i
 
 src/Entities/Ball.s: src/Entities/Ball.cpp.s
@@ -173,7 +173,7 @@ src/Entities/Ball.s: src/Entities/Ball.cpp.s
 
 # target to generate assembly for a file
 src/Entities/Ball.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Ball.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Ball.cpp.s
 .PHONY : src/Entities/Ball.cpp.s
 
 src/Entities/Entity.obj: src/Entities/Entity.cpp.obj
@@ -182,7 +182,7 @@ src/Entities/Entity.obj: src/Entities/Entity.cpp.obj
 
 # target to build an object file
 src/Entities/Entity.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Entity.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Entity.cpp.obj
 .PHONY : src/Entities/Entity.cpp.obj
 
 src/Entities/Entity.i: src/Entities/Entity.cpp.i
@@ -191,7 +191,7 @@ src/Entities/Entity.i: src/Entities/Entity.cpp.i
 
 # target to preprocess a source file
 src/Entities/Entity.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Entity.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Entity.cpp.i
 .PHONY : src/Entities/Entity.cpp.i
 
 src/Entities/Entity.s: src/Entities/Entity.cpp.s
@@ -200,7 +200,7 @@ src/Entities/Entity.s: src/Entities/Entity.cpp.s
 
 # target to generate assembly for a file
 src/Entities/Entity.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Entity.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Entity.cpp.s
 .PHONY : src/Entities/Entity.cpp.s
 
 src/Entities/Player.obj: src/Entities/Player.cpp.obj
@@ -209,7 +209,7 @@ src/Entities/Player.obj: src/Entities/Player.cpp.obj
 
 # target to build an object file
 src/Entities/Player.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Player.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Player.cpp.obj
 .PHONY : src/Entities/Player.cpp.obj
 
 src/Entities/Player.i: src/Entities/Player.cpp.i
@@ -218,7 +218,7 @@ src/Entities/Player.i: src/Entities/Player.cpp.i
 
 # target to preprocess a source file
 src/Entities/Player.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Player.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Player.cpp.i
 .PHONY : src/Entities/Player.cpp.i
 
 src/Entities/Player.s: src/Entities/Player.cpp.s
@@ -227,7 +227,7 @@ src/Entities/Player.s: src/Entities/Player.cpp.s
 
 # target to generate assembly for a file
 src/Entities/Player.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/Entities/Player.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/Entities/Player.cpp.s
 .PHONY : src/Entities/Player.cpp.s
 
 src/States/GameState.obj: src/States/GameState.cpp.obj
@@ -236,7 +236,7 @@ src/States/GameState.obj: src/States/GameState.cpp.obj
 
 # target to build an object file
 src/States/GameState.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/GameState.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/GameState.cpp.obj
 .PHONY : src/States/GameState.cpp.obj
 
 src/States/GameState.i: src/States/GameState.cpp.i
@@ -245,7 +245,7 @@ src/States/GameState.i: src/States/GameState.cpp.i
 
 # target to preprocess a source file
 src/States/GameState.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/GameState.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/GameState.cpp.i
 .PHONY : src/States/GameState.cpp.i
 
 src/States/GameState.s: src/States/GameState.cpp.s
@@ -254,7 +254,7 @@ src/States/GameState.s: src/States/GameState.cpp.s
 
 # target to generate assembly for a file
 src/States/GameState.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/GameState.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/GameState.cpp.s
 .PHONY : src/States/GameState.cpp.s
 
 src/States/MainGame.obj: src/States/MainGame.cpp.obj
@@ -263,7 +263,7 @@ src/States/MainGame.obj: src/States/MainGame.cpp.obj
 
 # target to build an object file
 src/States/MainGame.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainGame.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/MainGame.cpp.obj
 .PHONY : src/States/MainGame.cpp.obj
 
 src/States/MainGame.i: src/States/MainGame.cpp.i
@@ -272,7 +272,7 @@ src/States/MainGame.i: src/States/MainGame.cpp.i
 
 # target to preprocess a source file
 src/States/MainGame.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainGame.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/MainGame.cpp.i
 .PHONY : src/States/MainGame.cpp.i
 
 src/States/MainGame.s: src/States/MainGame.cpp.s
@@ -281,7 +281,7 @@ src/States/MainGame.s: src/States/MainGame.cpp.s
 
 # target to generate assembly for a file
 src/States/MainGame.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainGame.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/MainGame.cpp.s
 .PHONY : src/States/MainGame.cpp.s
 
 src/States/MainMenu.obj: src/States/MainMenu.cpp.obj
@@ -290,7 +290,7 @@ src/States/MainMenu.obj: src/States/MainMenu.cpp.obj
 
 # target to build an object file
 src/States/MainMenu.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainMenu.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/MainMenu.cpp.obj
 .PHONY : src/States/MainMenu.cpp.obj
 
 src/States/MainMenu.i: src/States/MainMenu.cpp.i
@@ -299,7 +299,7 @@ src/States/MainMenu.i: src/States/MainMenu.cpp.i
 
 # target to preprocess a source file
 src/States/MainMenu.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainMenu.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/MainMenu.cpp.i
 .PHONY : src/States/MainMenu.cpp.i
 
 src/States/MainMenu.s: src/States/MainMenu.cpp.s
@@ -308,7 +308,7 @@ src/States/MainMenu.s: src/States/MainMenu.cpp.s
 
 # target to generate assembly for a file
 src/States/MainMenu.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/MainMenu.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/MainMenu.cpp.s
 .PHONY : src/States/MainMenu.cpp.s
 
 src/States/Settings.obj: src/States/Settings.cpp.obj
@@ -317,7 +317,7 @@ src/States/Settings.obj: src/States/Settings.cpp.obj
 
 # target to build an object file
 src/States/Settings.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/Settings.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/Settings.cpp.obj
 .PHONY : src/States/Settings.cpp.obj
 
 src/States/Settings.i: src/States/Settings.cpp.i
@@ -326,7 +326,7 @@ src/States/Settings.i: src/States/Settings.cpp.i
 
 # target to preprocess a source file
 src/States/Settings.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/Settings.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/Settings.cpp.i
 .PHONY : src/States/Settings.cpp.i
 
 src/States/Settings.s: src/States/Settings.cpp.s
@@ -335,7 +335,7 @@ src/States/Settings.s: src/States/Settings.cpp.s
 
 # target to generate assembly for a file
 src/States/Settings.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/States/Settings.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/States/Settings.cpp.s
 .PHONY : src/States/Settings.cpp.s
 
 src/UI/Countdown.obj: src/UI/Countdown.cpp.obj
@@ -344,7 +344,7 @@ src/UI/Countdown.obj: src/UI/Countdown.cpp.obj
 
 # target to build an object file
 src/UI/Countdown.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Countdown.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Countdown.cpp.obj
 .PHONY : src/UI/Countdown.cpp.obj
 
 src/UI/Countdown.i: src/UI/Countdown.cpp.i
@@ -353,7 +353,7 @@ src/UI/Countdown.i: src/UI/Countdown.cpp.i
 
 # target to preprocess a source file
 src/UI/Countdown.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Countdown.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Countdown.cpp.i
 .PHONY : src/UI/Countdown.cpp.i
 
 src/UI/Countdown.s: src/UI/Countdown.cpp.s
@@ -362,7 +362,7 @@ src/UI/Countdown.s: src/UI/Countdown.cpp.s
 
 # target to generate assembly for a file
 src/UI/Countdown.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Countdown.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Countdown.cpp.s
 .PHONY : src/UI/Countdown.cpp.s
 
 src/UI/Score.obj: src/UI/Score.cpp.obj
@@ -371,7 +371,7 @@ src/UI/Score.obj: src/UI/Score.cpp.obj
 
 # target to build an object file
 src/UI/Score.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Score.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Score.cpp.obj
 .PHONY : src/UI/Score.cpp.obj
 
 src/UI/Score.i: src/UI/Score.cpp.i
@@ -380,7 +380,7 @@ src/UI/Score.i: src/UI/Score.cpp.i
 
 # target to preprocess a source file
 src/UI/Score.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Score.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Score.cpp.i
 .PHONY : src/UI/Score.cpp.i
 
 src/UI/Score.s: src/UI/Score.cpp.s
@@ -389,7 +389,7 @@ src/UI/Score.s: src/UI/Score.cpp.s
 
 # target to generate assembly for a file
 src/UI/Score.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Score.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Score.cpp.s
 .PHONY : src/UI/Score.cpp.s
 
 src/UI/Selector.obj: src/UI/Selector.cpp.obj
@@ -398,7 +398,7 @@ src/UI/Selector.obj: src/UI/Selector.cpp.obj
 
 # target to build an object file
 src/UI/Selector.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Selector.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Selector.cpp.obj
 .PHONY : src/UI/Selector.cpp.obj
 
 src/UI/Selector.i: src/UI/Selector.cpp.i
@@ -407,7 +407,7 @@ src/UI/Selector.i: src/UI/Selector.cpp.i
 
 # target to preprocess a source file
 src/UI/Selector.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Selector.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Selector.cpp.i
 .PHONY : src/UI/Selector.cpp.i
 
 src/UI/Selector.s: src/UI/Selector.cpp.s
@@ -416,7 +416,7 @@ src/UI/Selector.s: src/UI/Selector.cpp.s
 
 # target to generate assembly for a file
 src/UI/Selector.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/UI/Selector.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/UI/Selector.cpp.s
 .PHONY : src/UI/Selector.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -425,7 +425,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/main.cpp.obj
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -434,7 +434,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -443,7 +443,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles\testing.dir\build.make CMakeFiles/testing.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles\wof.dir\build.make CMakeFiles/wof.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -452,7 +452,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... testing
+	@echo ... wof
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... src/CollisionManager.obj

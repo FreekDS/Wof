@@ -23,7 +23,7 @@ void initIcon(sf::RenderWindow&);
 
 int main() {
     sf::Clock clk;
-    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), ">>>>>Wof Pong<<<<<", sf::Style::Fullscreen);
+    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), ">>>>>Wof Pong<<<<<", sf::Style::None);
     sf::Texture bgTexture;
     sf::Sprite bgSprite;
     gameMode = readMode();
